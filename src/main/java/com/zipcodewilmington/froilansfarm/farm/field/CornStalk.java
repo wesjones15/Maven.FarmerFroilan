@@ -1,7 +1,7 @@
-package com.zipcodewilmington.froilansfarm.farm;
-
-import com.zipcodewilmington.froilansfarm.farm.Crop;
+package com.zipcodewilmington.froilansfarm.farm.field;
 
 public class CornStalk extends Crop {
 
+    public static class CropRow {
+    }
 }

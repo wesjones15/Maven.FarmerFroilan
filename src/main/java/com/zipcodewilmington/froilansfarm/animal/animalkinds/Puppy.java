@@ -1,4 +1,4 @@
-package com.zipcodewilmington.froilansfarm.animal;
+package com.zipcodewilmington.froilansfarm.animal.animalkinds;
 
 import com.zipcodewilmington.froilansfarm.animal.Animal;
 
