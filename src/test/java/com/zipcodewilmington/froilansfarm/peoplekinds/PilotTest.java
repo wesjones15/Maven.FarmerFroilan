@@ -1,19 +1,7 @@
 package com.zipcodewilmington.froilansfarm.peoplekinds;
 
-public class PilotTest extends PersonTest {
-    public void eat() {
+import org.junit.Test;
 
-    }
+public class PilotTest {
 
-    public String makeNoise() {
-        return null;
-    }
-
-    public void mount() {
-
-    }
-
-    public void dismount() {
-
-    }
 }

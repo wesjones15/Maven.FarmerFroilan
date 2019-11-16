@@ -1,11 +1,8 @@
 package com.zipcodewilmington.froilansfarm.animal.animalkinds;
 
-import com.zipcodewilmington.froilansfarm.animal.AnimalTest;
-import com.zipcodewilmington.froilansfarm.interfaces.Produce;
+import org.junit.Test;
 
-public class ChickenTest extends AnimalTest implements Produce {
+public class ChickenTest {
 
-    public Double yield() {
-        return null;
-    }
+
 }

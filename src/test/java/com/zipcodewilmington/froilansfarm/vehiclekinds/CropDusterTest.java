@@ -1,15 +1,7 @@
 package com.zipcodewilmington.froilansfarm.vehiclekinds;
 
-import com.zipcodewilmington.froilansfarm.interfaces.AirCraft;
-import com.zipcodewilmington.froilansfarm.interfaces.Vehicle;
+import org.junit.Test;
 
-public class CropDusterTest extends FarmVehicleTest implements AirCraft, Vehicle {
+public class CropDusterTest {
 
-    public String makeNoise() {
-        return null;
-    }
-
-    public void fly() {
-
-    }
 }

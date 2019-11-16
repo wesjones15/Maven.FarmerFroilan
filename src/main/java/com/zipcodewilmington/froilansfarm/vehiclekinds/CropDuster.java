@@ -7,7 +7,7 @@ import com.zipcodewilmington.froilansfarm.vehiclekinds.FarmVehicle;
 public class CropDuster extends FarmVehicle implements AirCraft, Vehicle {
 
     public String makeNoise() {
-        return null;
+        return "Neowww";
     }
 
     public void fly() {

@@ -1,4 +1,6 @@
 package com.zipcodewilmington.froilansfarm.vehiclekinds;
 
-public abstract class FarmVehicleTest {
+import org.junit.Test;
+
+public class FarmVehicleTest {
 }

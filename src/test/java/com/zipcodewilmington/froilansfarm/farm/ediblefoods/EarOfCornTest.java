@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm.farm.ediblefoods;
 
-import com.zipcodewilmington.froilansfarm.interfaces.Edible;
+import org.junit.Test;
 
-public class EarOfCornTest implements Edible {
+public class EarOfCornTest {
 }

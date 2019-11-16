@@ -1,10 +1,7 @@
 package com.zipcodewilmington.froilansfarm.vehiclekinds;
 
-import com.zipcodewilmington.froilansfarm.interfaces.Vehicle;
+import org.junit.Test;
 
-public class TractorTest extends FarmVehicleTest implements Vehicle {
+public class TractorTest {
 
-    public String makeNoise() {
-        return null;
-    }
 }

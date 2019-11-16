@@ -1,10 +1,7 @@
 package com.zipcodewilmington.froilansfarm.farm.field;
 
-import com.zipcodewilmington.froilansfarm.interfaces.Produce;
+import org.junit.Test;
 
-public class CropTest implements Produce {
+public class CropTest {
 
-    public Double yield() {
-        return null;
-    }
 }

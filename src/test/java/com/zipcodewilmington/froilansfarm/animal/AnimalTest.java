@@ -1,8 +1,7 @@
 package com.zipcodewilmington.froilansfarm.animal;
 
-import com.zipcodewilmington.froilansfarm.interfaces.Eater;
-import com.zipcodewilmington.froilansfarm.interfaces.NoiseMaker;
+import org.junit.Test;
 
-public abstract class AnimalTest implements NoiseMaker, Eater {
+public class AnimalTest {
 
 }

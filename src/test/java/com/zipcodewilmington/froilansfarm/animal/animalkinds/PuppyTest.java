@@ -1,13 +1,7 @@
 package com.zipcodewilmington.froilansfarm.animal.animalkinds;
 
-import com.zipcodewilmington.froilansfarm.animal.AnimalTest;
+import org.junit.Test;
 
-public class PuppyTest extends AnimalTest {
-    public void eat() {
+public class PuppyTest {
 
-    }
-
-    public String makeNoise() {
-        return null;
-    }
 }
