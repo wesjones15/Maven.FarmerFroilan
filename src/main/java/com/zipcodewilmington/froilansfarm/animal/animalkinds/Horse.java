@@ -6,4 +6,11 @@ import com.zipcodewilmington.froilansfarm.interfaces.Rideable;
 
 public class Horse extends Animal implements Rideable, Edible {
 
+    public void eat() {
+
+    }
+
+    public String makeNoise() {
+        return null;
+    }
 }
