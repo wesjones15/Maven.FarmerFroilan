@@ -6,7 +6,7 @@ public class Pilot extends Person {
     }
 
     public String makeNoise() {
-        return null;
+        return "I'm gonna fly";
     }
 
     public void mount() {

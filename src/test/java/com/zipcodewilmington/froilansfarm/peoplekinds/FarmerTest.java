@@ -1,7 +1,7 @@
 package com.zipcodewilmington.froilansfarm.peoplekinds;
 
-import org.junit.Assert;
-import org.junit.Test;
+        import org.junit.Assert;
+        import org.junit.Test;
 
 public class FarmerTest {
     @Test

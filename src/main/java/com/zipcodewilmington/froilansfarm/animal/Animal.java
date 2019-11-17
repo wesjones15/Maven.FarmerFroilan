@@ -9,6 +9,10 @@ import java.util.ArrayList;
 public abstract class Animal implements NoiseMaker, Eater {
     ArrayList<Edible> stomachContents = new ArrayList<Edible>();
 
+    public Animal(){
+
+    }
+
     public void eat(Edible food) {
         stomachContents.add(food);
     }
