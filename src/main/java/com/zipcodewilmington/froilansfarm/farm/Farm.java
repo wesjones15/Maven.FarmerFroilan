@@ -19,7 +19,7 @@ public class Farm {
         chickenCoops = new ArrayList<ChickenCoop>();
         stables = new ArrayList<Stable>();
         for (int i = 0; i < 4; i++) {
-            chickenCoops.add(new ChickenCoop(0));
+            chickenCoops.add(new ChickenCoop());
         }
         for (int i = 0; i < 3; i++) {
             stables.add(new Stable());
