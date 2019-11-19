@@ -13,8 +13,18 @@ public class Puppy extends Animal implements Edible {
 
     public Puppy(){
         super.setName("[Wet Puppy]");
+        this.isWet = isWet;
     }
     public String makeNoise() {
         return "Bork";
     }
+
+    public Boolean getWet() {
+        return isWet;
+    }
+
+    public void setWet(Boolean wet) {
+        isWet = wet;
+    }
+
 }
