@@ -3,10 +3,11 @@ package com.zipcodewilmington.froilansfarm.farm.field;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.interfaces.Produce;
 
-public class Crop implements Produce {
-    private Boolean hasBeenFertilized;
-    private Boolean hasBeenHarvested;
+public abstract class Crop implements Produce {
+    protected Boolean hasBeenFertilized;
+    protected Boolean hasBeenHarvested;
 
+<<<<<<< HEAD
     //TODO make yield abstract
     // return type Edible
     public Edible yield() {
@@ -16,6 +17,10 @@ public class Crop implements Produce {
     public Boolean fertilize() {
         return null;
     }
+=======
+    public abstract Edible yield();
+//try to implement yield to only be accessed in crop for our edible foods.
+>>>>>>> dev
 
     public Boolean getHasBeenFertilized() {
         return hasBeenFertilized;
