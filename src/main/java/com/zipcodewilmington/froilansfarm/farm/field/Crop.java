@@ -6,6 +6,8 @@ public class Crop implements Produce {
     private Boolean hasBeenFertilized;
     private Boolean hasBeenHarvested;
 
+    //TODO make yield abstract
+    // return type Edible
     public Double yield() {
         return null;
     }
