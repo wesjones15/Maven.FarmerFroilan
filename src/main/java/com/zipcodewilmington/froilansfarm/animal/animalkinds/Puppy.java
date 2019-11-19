@@ -8,6 +8,6 @@ public class Puppy extends Animal {
     }
 
     public String makeNoise() {
-        return null;
+        return "Bork";
     }
 }

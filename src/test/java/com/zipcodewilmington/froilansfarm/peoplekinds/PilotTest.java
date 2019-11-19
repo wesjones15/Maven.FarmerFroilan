@@ -1,19 +1,14 @@
 package com.zipcodewilmington.froilansfarm.peoplekinds;
 
-public class PilotTest extends PersonTest {
-    public void eat() {
+import org.junit.Assert;
+import org.junit.Test;
 
-    }
-
-    public String makeNoise() {
-        return null;
-    }
-
-    public void mount() {
-
-    }
-
-    public void dismount() {
-
+public class PilotTest {
+    @Test
+    public void testMakeNoise(){
+        Pilot froilanda = new Pilot();
+        String expected = "I'm gonna fly";
+        String actual = froilanda.makeNoise();
+        Assert.assertEquals(expected, actual);
     }
 }

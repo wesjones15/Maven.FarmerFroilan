@@ -1,7 +1,7 @@
 package com.zipcodewilmington.froilansfarm.farm.field;
 
-public class CornStalkTest extends CropTest {
+import org.junit.Test;
 
-    public static class CropRow {
-    }
+public class CornStalkTest {
+
 }

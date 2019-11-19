@@ -1,9 +1,14 @@
 package com.zipcodewilmington.froilansfarm.peoplekinds;
 
-import com.zipcodewilmington.froilansfarm.interfaces.Botanist;
+        import org.junit.Assert;
+        import org.junit.Test;
 
-public class FarmerTest implements Botanist {
-    public void plant() {
-
+public class FarmerTest {
+    @Test
+    public void testMakeNoise(){
+        Farmer froilan = new Farmer();
+        String expected = "Yee Yee";
+        String actual = froilan.makeNoise();
+        Assert.assertEquals(expected, actual);
     }
 }

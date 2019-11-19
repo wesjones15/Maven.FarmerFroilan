@@ -1,9 +1,15 @@
 package com.zipcodewilmington.froilansfarm.animal.animalkinds;
 
-import com.zipcodewilmington.froilansfarm.animal.AnimalTest;
-import com.zipcodewilmington.froilansfarm.interfaces.Edible;
-import com.zipcodewilmington.froilansfarm.interfaces.Rideable;
+import com.zipcodewilmington.froilansfarm.animal.Animal;
+import org.junit.Assert;
+import org.junit.Test;
 
-public class HorseTest extends AnimalTest implements Rideable, Edible {
-
+public class HorseTest {
+    @Test
+    public void testMakeNoise() {
+        Animal horse = new Horse();
+        String expected = "Neigh";
+        String actual = horse.makeNoise();
+        Assert.assertEquals(expected, actual);
+    }
 }

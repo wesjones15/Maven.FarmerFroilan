@@ -9,11 +9,7 @@ public class Chicken extends Animal implements Produce {
         return null;
     }
 
-    public void eat() {
-
-    }
-
     public String makeNoise() {
-        return null;
+        return "Bawk";
     }
 }

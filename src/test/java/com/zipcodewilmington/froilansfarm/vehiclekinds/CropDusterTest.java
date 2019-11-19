@@ -1,15 +1,16 @@
 package com.zipcodewilmington.froilansfarm.vehiclekinds;
 
-import com.zipcodewilmington.froilansfarm.interfaces.AirCraft;
-import com.zipcodewilmington.froilansfarm.interfaces.Vehicle;
+import com.zipcodewilmington.froilansfarm.peoplekinds.Farmer;
+import org.junit.Assert;
+import org.junit.Test;
 
-public class CropDusterTest extends FarmVehicleTest implements AirCraft, Vehicle {
-
-    public String makeNoise() {
-        return null;
+public class CropDusterTest {
+    @Test
+    public void testMakeNoise(){
+        CropDuster cd = new CropDuster();
+        String expected = "Neowww";
+        String actual = cd.makeNoise();
+        Assert.assertEquals(expected, actual);
     }
 
-    public void fly() {
-
-    }
 }

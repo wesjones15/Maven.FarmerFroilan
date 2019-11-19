@@ -1,11 +1,15 @@
 package com.zipcodewilmington.froilansfarm.animal.animalkinds;
 
-import com.zipcodewilmington.froilansfarm.animal.AnimalTest;
-import com.zipcodewilmington.froilansfarm.interfaces.Produce;
+import com.zipcodewilmington.froilansfarm.animal.Animal;
+import org.junit.Assert;
+import org.junit.Test;
 
-public class ChickenTest extends AnimalTest implements Produce {
-
-    public Double yield() {
-        return null;
+public class ChickenTest {
+    @Test
+    public void testMakeNoise() {
+        Animal chicken = new Chicken();
+        String expected = "Bawk";
+        String actual = chicken.makeNoise();
+        Assert.assertEquals(expected, actual);
     }
 }
