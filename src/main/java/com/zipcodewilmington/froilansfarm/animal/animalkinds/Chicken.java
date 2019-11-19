@@ -11,6 +11,7 @@ public class Chicken extends Animal implements Produce, Edible {
 
     // maybe establish a map of names with int keys
     // then make the nullary constructor draw the name using a key and a random number generator
+    // names could be [Breast], [Thigh], and [Fingers]
 
     private Boolean hasBeenFertilized;
 
