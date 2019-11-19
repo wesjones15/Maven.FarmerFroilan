@@ -4,42 +4,43 @@ import com.zipcodewilmington.froilansfarm.peoplekinds.Farmer;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Person;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Pilot;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class FarmHouseTest {
+    Person person;
+    FarmHouse farmHouse;
+
+    @Before
+    public void setUp() throws Exception {
+        farmHouse = new FarmHouse();
+        person = new Farmer("BIG Froilan");
+    }
+
     @Test
     public void testAddPerson1() {
-        FarmHouse farmHouse = new FarmHouse();
-        Person person = new Farmer();
-
         farmHouse.add(person);
         Assert.assertEquals(person, farmHouse.get().get(0));
     }
 
     @Test
     public void testAddPerson2() {
-        FarmHouse farmHouse = new FarmHouse();
-        Person person = new Farmer();
         farmHouse.add(person);
         farmHouse.add(person);
-
         Assert.assertEquals(2, farmHouse.get().size());
     }
 
     @Test
     public void testRemovePerson() {
-        FarmHouse farmhouse = new FarmHouse();
-        Person person = new Farmer();
-        farmhouse.add(person);
-        farmhouse.remove(person);
-        Assert.assertTrue(farmhouse.get().isEmpty());
+        farmHouse.add(person);
+        farmHouse.remove(person);
+        Assert.assertTrue(farmHouse.get().isEmpty());
     }
 
     @Test
     public void testRemoveAll() {
-        FarmHouse farmHouse = new FarmHouse();
-        farmHouse.add(new Farmer());
-        farmHouse.add(new Pilot());
+        farmHouse.add(new Farmer("John"));
+        farmHouse.add(new Pilot("Froilanda"));
         farmHouse.removeAll();
         Assert.assertTrue(farmHouse.get().isEmpty());
     }
