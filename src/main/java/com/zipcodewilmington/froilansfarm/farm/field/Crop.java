@@ -4,10 +4,11 @@ import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.interfaces.Produce;
 
 public abstract class Crop implements Produce {
-    private Boolean hasBeenFertilized;
-    private Boolean hasBeenHarvested;
+    protected Boolean hasBeenFertilized;
+    protected Boolean hasBeenHarvested;
 
     public abstract Edible yield();
+//try to implement yield to only be accessed in crop for our edible foods.
 
     public Boolean getHasBeenFertilized() {
         return hasBeenFertilized;
