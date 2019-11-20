@@ -80,11 +80,27 @@ public class Farm {
         this.chickenCoops = chickenCoops;
     }
 
+    public void addChickenCoop() {
+        chickenCoops.add(new ChickenCoop());
+    }
+
+    public ChickenCoop getChickenCoop(Integer index) {
+        return chickenCoops.get(index);
+    }
+
     public ArrayList<Stable> getStables() {
         return stables;
     }
 
     public void setStables(ArrayList<Stable> stables) {
         this.stables = stables;
+    }
+
+    public void addStable() {
+        stables.add(new Stable());
+    }
+
+    public Stable getStable(Integer index) {
+        return stables.get(index);
     }
 }
