@@ -26,14 +26,16 @@ public class CropDuster extends FarmVehicle implements AirCraft, Vehicle {
         return "Whir whir!";
     }
 
-    public void mount(Person rider) {
+    public Boolean mount(Person rider) {
         if (rider instanceof Pilot) {
             this.pilot = rider;
+            pilot.mount(this);
+            return true;
         }
+        return false;
     }
 
     public void operate(Farm farm) {
-        pilot.mount(this);
         fly();
         Field field = farm.getField();
         for (CropRow cropRow : field.get()) {

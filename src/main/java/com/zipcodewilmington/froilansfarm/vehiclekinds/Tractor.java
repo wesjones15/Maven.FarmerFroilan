@@ -20,7 +20,6 @@ public class Tractor extends FarmVehicle implements Vehicle {
 //    ArrayList<CropRow> field;
 
     public Tractor() {
-//        this.farm = farm;
         this.farmer = null;
     }
 
@@ -28,9 +27,18 @@ public class Tractor extends FarmVehicle implements Vehicle {
         return "Brrrn";
     }
 
-    //TODO
+    //TODO call this method before calling operate
+    public Boolean mount(Person rider) {
+        if (rider instanceof Farmer) {
+            farmer = rider;
+            farmer.mount(this);
+            return true;
+        }
+        return false;
+    }
+
     public void operate(Farm farm) {
-        farmer.mount(this);
+
         // for each croprow in field in farm
         Field field = farm.getField();
         for (CropRow cropRow : field.get()) { // farm.getField().getCropRows()) {
@@ -38,13 +46,6 @@ public class Tractor extends FarmVehicle implements Vehicle {
 
         }
         farmer.dismount();
-    }
-
-    //TODO call this method before calling operate
-    public void mount(Person rider) {
-        if (rider instanceof Farmer) {
-            farmer = rider;
-        }
     }
 
 

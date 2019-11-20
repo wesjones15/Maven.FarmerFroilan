@@ -9,7 +9,7 @@ public abstract class FarmVehicle {
 
     public abstract void operate(Farm farm);
 
-    public abstract void mount(Person rider);
+    public abstract Boolean mount(Person rider);
     public void dismount() {
         rider = null;
     }

@@ -20,11 +20,25 @@ public class CropDusterTest {
     }
 
     @Test
-    public void testMount() {
+    public void testMountAndFly() {
         Person pilot = new Pilot("Froilanda");
         CropDuster cropDuster = new CropDuster();
         cropDuster.mount(pilot);
         Assert.assertTrue(cropDuster.fly());
+    }
+
+    @Test
+    public void testMount1() {
+        Person pilot = new Pilot("Froilanda");
+        CropDuster cropDuster = new CropDuster();
+        Assert.assertTrue(cropDuster.mount(pilot));
+    }
+
+    @Test
+    public void testMount2() {
+        CropDuster cropDuster = new CropDuster();
+        Person farmer = new Farmer("Froi");
+        Assert.assertFalse(cropDuster.mount(farmer));
     }
 
     @Test
