@@ -11,12 +11,12 @@ import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.CropRow;
 import java.util.ArrayList;
 
 public class CropDuster extends FarmVehicle implements AirCraft, Vehicle {
-    Rideable ride;
-    private Farm farm;
+//    Rideable ride;
+//    private Farm farm;
     private Pilot pilot;
 
-    public CropDuster(Farm farm) {
-        this.farm = farm;
+    public CropDuster() {
+//        this.farm = farm;
     }
 
     public String makeNoise() {

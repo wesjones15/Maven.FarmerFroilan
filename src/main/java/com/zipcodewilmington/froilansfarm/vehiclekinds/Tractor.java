@@ -11,13 +11,13 @@ import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.CropRow;
 import java.util.ArrayList;
 
 public class Tractor extends FarmVehicle implements Vehicle {
-    Farm farm;
+//    Farm farm;
     Farmer farmer;
     Rideable ride;
     ArrayList<CropRow> field;
 
-    public Tractor(Farm farm) {
-        this.farm = farm;
+    public Tractor() {
+//        this.farm = farm;
     }
 
     public String makeNoise() {
