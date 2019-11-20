@@ -3,16 +3,14 @@ package com.zipcodewilmington.froilansfarm.peoplekinds;
 import com.zipcodewilmington.froilansfarm.animal.animalkinds.Horse;
 import com.zipcodewilmington.froilansfarm.farm.ediblefoods.EarOfCorn;
 import com.zipcodewilmington.froilansfarm.interfaces.Botanist;
-import com.zipcodewilmington.froilansfarm.interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.CropRow;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Stable;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Farmer extends Person implements Botanist, Eater {
+public class Farmer extends Person implements Botanist {
     private Rideable ride = null;
     private ArrayList<Edible> stomachContents;
     private String name;
@@ -43,9 +41,26 @@ public class Farmer extends Person implements Botanist, Eater {
         //their stomach contents will increase by 3 and the silo/storge of EarOfCorn will decrement by 3
     }
 
-    public void eat() {
+    public void eat(Edible food, Integer quantity) {
+        //Froilan eats 1 earCorn so silo contents of corn will decrement by 1 and his stomachContents will increase by 1
+        //Eats 2 tomato  - silo tomato count will decrement by 2 and stomach contents will be added
+        //Eats 5 eggs  - wherever we keep eggs, decrement by two, add two eggs to stomach contents arraylist
+
+    }
 
 
+
+    @Override
+    public ArrayList<Edible> getStomachContents() {
+        return stomachContents;
+    }
+
+    @Override
+    public String toString() {
+        return "Farmer{" +
+                "stomachContents=" + stomachContents +
+                ", name='" + name + '\'' +
+                '}';
     }
 
     public String makeNoise() {
