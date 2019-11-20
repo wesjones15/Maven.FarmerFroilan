@@ -6,7 +6,7 @@ import org.junit.Test;
 public class PilotTest {
     @Test
     public void testMakeNoise(){
-        Pilot froilanda = new Pilot();
+        Pilot froilanda = new Pilot("Amelia");
         String expected = "I'm gonna fly";
         String actual = froilanda.makeNoise();
         Assert.assertEquals(expected, actual);

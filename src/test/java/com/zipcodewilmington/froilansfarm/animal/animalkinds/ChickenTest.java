@@ -6,6 +6,7 @@ import com.zipcodewilmington.froilansfarm.farm.ediblefoods.EdibleEgg;
 import com.zipcodewilmington.froilansfarm.interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.interfaces.NoiseMaker;
+import com.zipcodewilmington.froilansfarm.interfaces.Produce;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,6 +37,16 @@ public class ChickenTest {
     @Test
     public void isEater(){
         Assert.assertTrue(testChicken instanceof Eater);
+    }
+
+    @Test
+    public void isProduce(){
+        Assert.assertTrue(testChicken instanceof Produce);
+    }
+
+    @Test
+    public void isEdible(){
+        Assert.assertTrue(testChicken instanceof Edible);
     }
 
     @Test

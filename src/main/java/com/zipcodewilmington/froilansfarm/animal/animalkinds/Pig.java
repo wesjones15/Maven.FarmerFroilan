@@ -7,8 +7,6 @@ public class Pig extends Animal implements Edible {
 
 //    private String name;
 
-    Pig napoleon = new Pig("Napoleon");
-
     public String makeNoise() {
         if (this.getName() == "Napoleon") {return "Four legs good, two legs bad.";}
         else {return "Oink";}
@@ -19,7 +17,7 @@ public class Pig extends Animal implements Edible {
     }
 
     public Pig(){
-        super.setName("Some Pig");
+        super.setName("[Some Pig]");
     }
 
 }
