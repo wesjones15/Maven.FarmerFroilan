@@ -3,19 +3,17 @@ package com.zipcodewilmington.froilansfarm.vehiclekinds;
 import com.zipcodewilmington.froilansfarm.farm.Farm;
 import com.zipcodewilmington.froilansfarm.farm.field.Crop;
 import com.zipcodewilmington.froilansfarm.interfaces.AirCraft;
+import com.zipcodewilmington.froilansfarm.interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.interfaces.Vehicle;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Pilot;
-import com.zipcodewilmington.froilansfarm.vehiclekinds.FarmVehicle;
-import com.zipcodewilmington.froilansfarm.warehouses.Container;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.CropRow;
-import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Field;
 
 import java.util.ArrayList;
 
 public class CropDuster extends FarmVehicle implements AirCraft, Vehicle {
-    private Pilot pilot;
+    Rideable ride;
     private Farm farm;
-    private ArrayList<CropRow> field;
+    private Pilot pilot;
 
     public CropDuster(Farm farm) {
         this.farm = farm;
@@ -26,15 +24,17 @@ public class CropDuster extends FarmVehicle implements AirCraft, Vehicle {
     }
 
     public void operate(Farm farm) {
+        pilot.mount();
         fly();
+        pilot.dismount();
     }
 
     //TODO
     public void fly() {
         // for each CropRow in field
-        for (CropRow row : field) { //need getter: farm.getfield()
+//        for (CropRow row : field) { //need getter: farm.getfield()
 //            fertilize(row);
-        }
+//        }
     }
 
     public void fertilize(ArrayList<Crop> cropRow) {
