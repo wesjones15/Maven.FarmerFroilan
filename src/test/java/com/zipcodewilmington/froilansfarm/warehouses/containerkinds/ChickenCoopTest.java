@@ -2,7 +2,6 @@ package com.zipcodewilmington.froilansfarm.warehouses.containerkinds;
 
 import com.zipcodewilmington.froilansfarm.animal.animalkinds.Chicken;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class ChickenCoopTest {
