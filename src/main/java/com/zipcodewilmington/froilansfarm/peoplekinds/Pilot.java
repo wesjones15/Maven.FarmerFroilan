@@ -7,19 +7,19 @@ public class Pilot extends Person {
         this.name = "Flyin' Froilanda";
     }
 
-    public void eat() {
-
-    }
+//    public void eat() {
+//
+//    }
 
     public String makeNoise() {
         return "I'm gonna fly";
     }
 
-    public void mount() {
+//    public void mount() {
+//
+//    }
 
-    }
-
-    public void dismount() {
-
-    }
+//    public void dismount() {
+//
+//    }
 }

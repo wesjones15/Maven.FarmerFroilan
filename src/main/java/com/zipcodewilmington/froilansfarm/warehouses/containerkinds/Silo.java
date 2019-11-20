@@ -12,4 +12,11 @@ public class Silo extends Container<Edible> {
     public Silo() {
         this.contents = new ArrayList<Edible>();
     }
+
+    public void addAll(ArrayList<Edible> foods) {
+        for (Edible food: foods) {
+            this.add(food);
+        }
+    }
+
 }
