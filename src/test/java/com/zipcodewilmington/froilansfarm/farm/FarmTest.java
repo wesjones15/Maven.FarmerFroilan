@@ -1,6 +1,5 @@
 package com.zipcodewilmington.froilansfarm.farm;
 
-import com.zipcodewilmington.froilansfarm.interfaces.Vehicle;
 import com.zipcodewilmington.froilansfarm.vehiclekinds.CropDuster;
 import com.zipcodewilmington.froilansfarm.vehiclekinds.Tractor;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.ChickenCoop;
