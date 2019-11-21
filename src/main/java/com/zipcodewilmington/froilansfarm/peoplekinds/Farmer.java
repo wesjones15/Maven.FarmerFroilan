@@ -4,14 +4,12 @@ import com.zipcodewilmington.froilansfarm.animal.animalkinds.Horse;
 import com.zipcodewilmington.froilansfarm.farm.ediblefoods.EarOfCorn;
 import com.zipcodewilmington.froilansfarm.interfaces.Botanist;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
-import com.zipcodewilmington.froilansfarm.interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.CropRow;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Stable;
 
 import java.util.ArrayList;
 
 public class Farmer extends Person implements Botanist {
-    private Rideable ride = null;
     private ArrayList<Edible> stomachContents;
     private String name;
 
