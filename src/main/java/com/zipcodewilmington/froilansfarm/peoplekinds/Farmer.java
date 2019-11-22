@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm.peoplekinds;
 
 import com.zipcodewilmington.froilansfarm.animal.animalkinds.Horse;
+import com.zipcodewilmington.froilansfarm.farm.Farm;
 import com.zipcodewilmington.froilansfarm.farm.ediblefoods.EarOfCorn;
 import com.zipcodewilmington.froilansfarm.interfaces.Botanist;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
@@ -46,6 +47,11 @@ public class Farmer extends Person implements Botanist {
 
     }
 
+    //cropRow index 0 is Corn, cropRow index 1 is Tomato, and cropRow index 3+ some sort of arbitrary crop
+    public void plant (Farm farm) {
+
+
+    }
 
 
     @Override

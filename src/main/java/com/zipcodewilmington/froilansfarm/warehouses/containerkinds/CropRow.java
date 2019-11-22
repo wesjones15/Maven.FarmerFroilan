@@ -11,3 +11,5 @@ public class CropRow extends Container<Crop> {
         this.contents = new ArrayList<Crop>();
     }
 }
+
+//cropRow index 0 is Corn, cropRow index 1 is Tomato, and cropRow index 3+ some sort of arbitrary crop
