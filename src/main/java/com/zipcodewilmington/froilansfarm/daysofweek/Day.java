@@ -19,6 +19,13 @@ public class Day {
     public static final Edible[] froilandaBreakfast = {new EarOfCorn(), new EarOfCorn(), new Tomato(), new EdibleEgg(), new EdibleEgg()};
     public static final Edible[] horseMeal = {new EarOfCorn(), new EarOfCorn(), new EarOfCorn()};
 
+    public static Farm morning(Farm farm) {
+        farm = feedFarmer(farm);
+        farm = feedPilot(farm);
+        farm = rideHorses(farm);
+        farm = feedHorses(farm);
+        return farm;
+    }
 //    public static Animal eatMeal(Animal eater, Edible[] meal, Farm farm) {
 //        Silo silo = farm.getSilo();
 //        for (Edible food : meal) {

@@ -35,7 +35,7 @@ public class CropDuster extends FarmVehicle implements AirCraft, Vehicle {
         return false;
     }
 
-    public void operate(Farm farm) {
+    public Farm operate(Farm farm) {
         fly();
         Field field = farm.getField();
         for (CropRow cropRow : field.get()) {
@@ -44,6 +44,8 @@ public class CropDuster extends FarmVehicle implements AirCraft, Vehicle {
         land();
         pilot.dismount();
         this.dismount();
+        farm.setField(field);
+        return farm;
     }
 
     public Boolean fly() {
@@ -64,5 +66,6 @@ public class CropDuster extends FarmVehicle implements AirCraft, Vehicle {
         for (Crop crop : cropRow.get()) {
             crop.setHasBeenFertilized(true);
         }
+//        return cropRow;
     }
 }

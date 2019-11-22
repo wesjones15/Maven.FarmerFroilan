@@ -25,8 +25,6 @@ public class SundayTest {
 
     @Test
     public void testPlantField() {
-//        Farm farm = new Farm();
-//        farm.getFarmHouse().add(new Farmer("Froilan"));
         farm = Sunday.plantField(farm);
         for (int i = 0; i < 5; i++) {
             Integer actual = farm.getField().get().get(i).get().size();
@@ -36,7 +34,7 @@ public class SundayTest {
     }
 
     @Test
-    public void testRun() {
+    public void testFeedFarmer() {
         farm = Sunday.run(farm);
         Integer actual = farm.getFarmHouse().getFarmer().getStomachContents().size();
         Integer expected = 8;

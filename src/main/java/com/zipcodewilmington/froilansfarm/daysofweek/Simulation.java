@@ -39,6 +39,8 @@ public class Simulation {
     public void run() {
         init();
         farm = Sunday.run(farm);
+        farm = Monday.run(farm);
+        farm = Tuesday.run(farm);
     }
 
     public ArrayList<Stable> populateHorses(Farm farm) {

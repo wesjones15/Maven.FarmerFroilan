@@ -26,8 +26,9 @@ public class Farmer extends Person implements Botanist {
         this.name = name;
     }
 
-    public void plant(Crop crop, CropRow cropRow) {
+    public CropRow plant(Crop crop, CropRow cropRow) {
         cropRow.add(crop);
+        return cropRow;
     }
 
     public void ride(Horse horse, Stable stable) {
