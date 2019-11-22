@@ -43,6 +43,7 @@ public class CropDuster extends FarmVehicle implements AirCraft, Vehicle {
         }
         land();
         pilot.dismount();
+        this.dismount();
     }
 
     public Boolean fly() {

@@ -46,6 +46,7 @@ public class Tractor extends FarmVehicle implements Vehicle {
 
         }
         farmer.dismount();
+        this.dismount();
     }
 
 
