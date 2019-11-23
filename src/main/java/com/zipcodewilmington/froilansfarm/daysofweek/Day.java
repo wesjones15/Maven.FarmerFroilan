@@ -23,7 +23,9 @@ public class Day {
     public static final Edible[] froilandaLunch = {new EarOfCorn(), new Tomato(), new EdibleEgg(), new EdibleEgg()};
 
     public static final Edible[] froilanLDinner = {new EarOfCorn(), new EarOfCorn(), new Tomato(), new EdibleEgg(), new EdibleEgg()};
-    public static final Edible[] froilandaDinner = {new EarOfCorn(), new Tomato(), new Tomato(), new Tomato(), new  EdibleEgg()};    public static final Edible[] horseMeal = {new EarOfCorn(), new EarOfCorn(), new EarOfCorn()};
+    public static final Edible[] froilandaDinner = {new EarOfCorn(), new Tomato(), new Tomato(), new Tomato(), new  EdibleEgg()};
+
+    public static final Edible[] horseMeal = {new EarOfCorn(), new EarOfCorn(), new EarOfCorn()};
 
     public static Farm morningMeals(Farm farm) {
         farm = feedFarmer(farm, froilanBreakfast);
