@@ -35,11 +35,6 @@ public class TuesdayTest {
 
     @Test
     public void testHarvest2() {
-        //TODO fix
-        // it appears that when the first Crop in each row is harvested
-        // that it is setting hasBeenHarvested to true for every crop in that row
-        // and as a result, is only putting the first item from each row into the silo
-        // might be due to when i plant fields on sunday i am using the same new crop instance to all of the row
         String prev = farm.getSilo().toString();
         farm = Sunday.run(farm);
         farm = Monday.run(farm);
