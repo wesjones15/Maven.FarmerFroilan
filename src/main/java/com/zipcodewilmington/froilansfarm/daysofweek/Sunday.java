@@ -22,18 +22,34 @@ public class Sunday extends Day {
         Crop[] crops = {new CornStalk(), new TomatoPlant(), new CornStalk(), new CornStalk(), new TomatoPlant()};
         Field field = farm.getField();
         for (int i = 0; i < 5; i++) {
-            Crop crop = crops[i];
-            CropRow cropRow = plantRow(crop, farmer);
+            CropRow cropRow;
+            if (crops[i] instanceof CornStalk) {
+                cropRow = plantCorn(farmer);
+            }
+            else if (crops[i] instanceof TomatoPlant) {
+                cropRow = plantTomato(farmer);
+            }
+            else {
+                cropRow = plantCorn(farmer);
+            }
             field.add(cropRow);
         }
         farm.setField(field);
         return farm;
     }
 
-    public static CropRow plantRow(Crop crop, Farmer farmer) {
+    public static CropRow plantCorn(Farmer farmer) {
         CropRow cropRow = new CropRow();
         for (int j = 0; j < 500; j++) {
-            cropRow = farmer.plant(crop, cropRow);
+            cropRow = farmer.plant(new CornStalk(), cropRow);
+        }
+        return cropRow;
+    }
+
+    public static CropRow plantTomato(Farmer farmer) {
+        CropRow cropRow = new CropRow();
+        for (int j = 0; j < 500; j++) {
+            cropRow = farmer.plant(new TomatoPlant(), cropRow);
         }
         return cropRow;
     }

@@ -35,16 +35,16 @@ public class TuesdayTest {
 
     @Test
     public void testHarvest2() {
-        //TODO fix
-        // it appears that when the first Crop in each row is harvested
-        // that it is setting hasBeenHarvested to true for every crop in that row
-        // and as a result, is only putting the first item from each row into the silo
-        // might be due to when i plant fields on sunday i am using the same new crop instance to all of the row
         String prev = farm.getSilo().toString();
         farm = Sunday.run(farm);
         farm = Monday.run(farm);
         farm = Tuesday.run(farm);
         String after = farm.getSilo().toString();
-        Assert.assertEquals(prev, after);
+        Assert.assertNotEquals(prev, after);
+        String expected = "Silo Inventory\n" +
+                "\tEarOfCorn x 1520\n" +
+                "\tTomato x 1020\n" +
+                "\tEdibleEgg x 20";
+        Assert.assertEquals(expected, after);
     }
 }
