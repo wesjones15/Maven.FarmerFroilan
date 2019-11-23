@@ -26,9 +26,6 @@ public class Farmer extends Person implements Botanist {
         this.name = name;
     }
 
-    public void plant(Edible edible, CropRow cropRow ) {
-
-    }
 
     public void ride(Horse horse, Stable stable) {
         //10 horses across 3 stables  flag for ridden to = true?  or a count?
