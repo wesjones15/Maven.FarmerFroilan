@@ -10,6 +10,7 @@ import com.zipcodewilmington.froilansfarm.peoplekinds.Person;
 import com.zipcodewilmington.froilansfarm.vehiclekinds.FarmVehicle;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.CropRow;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Field;
+import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Silo;
 
 import java.util.ArrayList;
 
@@ -37,15 +38,19 @@ public class Tractor extends FarmVehicle implements Vehicle {
         return false;
     }
 
-    public void operate(Farm farm) {
+    public Farm operate(Farm farm) {
 
         // for each croprow in field in farm
         Field field = farm.getField();
+        Silo silo = farm.getSilo();
         for (CropRow cropRow : field.get()) { // farm.getField().getCropRows()) {
-            farm.getSilo().addAll(harvest(cropRow));
+            silo.addAll(harvest(cropRow));
 
         }
         farmer.dismount();
+        this.dismount();
+        farm.setSilo(silo);
+        return farm;
     }
 
 

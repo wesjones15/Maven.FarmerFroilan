@@ -77,7 +77,7 @@ public class SiloTest {
         Tomato tomato = new Tomato();
         ArrayList<Edible> harvest = new ArrayList<Edible>(Arrays.asList(corn, corn, tomato, tomato, corn, corn));
         silo.addAll(harvest);
-        Integer actual = silo.getAmountOf(tomato);
+        Integer actual = silo.getAmountOf(new Tomato());
         Integer expected = 2;
         Assert.assertEquals(expected, actual);
     }

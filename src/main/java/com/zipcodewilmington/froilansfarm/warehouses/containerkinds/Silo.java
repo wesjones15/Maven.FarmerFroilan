@@ -33,7 +33,7 @@ public class Silo extends Container<Edible> {
     }
 
     public Edible getFood(Edible food) {
-        if (this.contents.contains(food)) {
+        if (getAmountOf(food) > 0) {
             this.remove(food);
             return food;
         }

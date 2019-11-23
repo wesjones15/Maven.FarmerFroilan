@@ -5,7 +5,7 @@ import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.interfaces.Rideable;
 
 public class Horse extends Animal implements Rideable, Edible {
-
+    public Boolean hasBeenRidden = false;
     public String makeNoise() {
         return "Neigh";
     }
@@ -16,5 +16,10 @@ public class Horse extends Animal implements Rideable, Edible {
 
     public Horse(){
         super.setName("[Gleu]");
+    }
+
+    public Boolean getHasBeenRidden() { return hasBeenRidden; }
+    public void setHasBeenRidden(Boolean ridden) {
+        this.hasBeenRidden = ridden;
     }
 }
