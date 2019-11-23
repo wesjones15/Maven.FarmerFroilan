@@ -45,6 +45,11 @@ public class TuesdayTest {
         farm = Monday.run(farm);
         farm = Tuesday.run(farm);
         String after = farm.getSilo().toString();
-        Assert.assertEquals(prev, after);
+        Assert.assertNotEquals(prev, after);
+        String expected = "Silo Inventory\n" +
+                "\tEarOfCorn x 1520\n" +
+                "\tTomato x 1020\n" +
+                "\tEdibleEgg x 20";
+        Assert.assertEquals(expected, after);
     }
 }
