@@ -35,7 +35,8 @@ public class Farmer extends Person implements Botanist {
     }
 
 
-    public void ride(Horse horse, Stable stable) {
+    public void ride(Farm farm, Horse horse, Stable stable) {
+
         //10 horses across 3 stables  flag for ridden to = true?  or a count?
 
     }
@@ -43,6 +44,7 @@ public class Farmer extends Person implements Botanist {
     public void feed(Horse horse, EarOfCorn corn){
         //each  horse gets 3 earsOfCorn
         //their stomach contents will increase by 3 and the silo/storge of EarOfCorn will decrement by 3
+        //Stable contents ArrayList of <Horse>
     }
 
 //    public void eat(Edible food, Integer quantity) {

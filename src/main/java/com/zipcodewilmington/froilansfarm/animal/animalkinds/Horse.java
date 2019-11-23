@@ -22,4 +22,6 @@ public class Horse extends Animal implements Rideable, Edible {
     public void setHasBeenRidden(Boolean ridden) {
         this.hasBeenRidden = ridden;
     }
+
+
 }

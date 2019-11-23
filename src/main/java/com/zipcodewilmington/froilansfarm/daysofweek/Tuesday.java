@@ -6,7 +6,7 @@ import com.zipcodewilmington.froilansfarm.vehiclekinds.Tractor;
 
 public class Tuesday extends Day {
     public static Farm run(Farm farm) {
-        farm = morning(farm);
+        farm = morningMeals(farm);
         farm = harvest(farm);
         return farm;
     }

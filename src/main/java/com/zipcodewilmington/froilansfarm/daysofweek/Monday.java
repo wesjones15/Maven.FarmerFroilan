@@ -8,7 +8,7 @@ import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Field;
 
 public class Monday extends Day {
     public static Farm run(Farm farm) {
-        farm = morning(farm);
+        farm = morningMeals(farm);
         farm = fertilize(farm);
         return farm;
     }
