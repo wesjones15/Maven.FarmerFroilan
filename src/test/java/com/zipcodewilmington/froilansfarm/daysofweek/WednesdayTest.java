@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class WednesdayTest {
 
     Farm farm;
+    Pilot pilot;
     Farmer farmer;
     Edible EdibleEgg, Tomato, EarOfCorn;
     Edible [] myFood = {new EdibleEgg(), new Tomato(), new EarOfCorn()};
@@ -35,18 +36,35 @@ public class WednesdayTest {
     }
 
     @Test
-    public void testBreakfast () {
-       Edible [] expected = new Edible[3];
-       expected[0] = new EdibleEgg();
-       expected[1] = new Tomato();
-       expected[2] = new EarOfCorn();
-       Day.feedFarmer(farm, myFood);
-       farmer = farm.getFarmHouse().getFarmer();
-       ArrayList<Edible> stomach = farmer.getStomachContents();
+    public void testfeedFarmer () {
+        Edible [] expected = new Edible[3];
+        expected[0] = new EdibleEgg();
+        expected[1] = new Tomato();
+        expected[2] = new EarOfCorn();
+        Day.feedFarmer(farm, myFood);
+        farmer = farm.getFarmHouse().getFarmer();
+        ArrayList<Edible> stomach = farmer.getStomachContents();
         Edible[] actual = new Edible[stomach.size()];
         actual= stomach.toArray(actual);
         for (int i = 0; i < stomach.size(); i++){
-           Assert.assertEquals(actual[i].getClass().getSimpleName(), (expected[i].getClass().getSimpleName()));
+            Assert.assertEquals(actual[i].getClass().getSimpleName(), (expected[i].getClass().getSimpleName()));
+        }
+    }
+
+    @Test
+    public void testFeedPilot () {
+        Edible [] expected = new Edible[4];
+        expected[0] = new EdibleEgg();
+        expected[1] = new Tomato();
+        expected[2] = new EarOfCorn();
+        expected[3] = new EdibleEgg();
+        Day.feedPilot(farm, myFood);
+        pilot = farm.getFarmHouse().getPilot();
+        ArrayList<Edible> stomach = pilot.getStomachContents();
+        Edible[] actual = new Edible[stomach.size()];
+        actual= stomach.toArray(actual);
+        for (int i = 0; i < stomach.size(); i++){
+            Assert.assertEquals(actual[i].getClass().getSimpleName(), (expected[i].getClass().getSimpleName()));
         }
     }
 

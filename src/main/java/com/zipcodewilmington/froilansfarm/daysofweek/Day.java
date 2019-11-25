@@ -27,7 +27,7 @@ public class Day {
 
     public static final Edible[] horseMeal = {new EarOfCorn(), new EarOfCorn(), new EarOfCorn()};
 
-    public static Farm morningMeals(Farm farm) {
+    public static Farm morningActivities(Farm farm) {
         farm = feedFarmer(farm, froilanBreakfast);
         farm = feedPilot(farm, froilandaBreakfast);
         farm = rideHorses(farm);
@@ -41,6 +41,15 @@ public class Day {
         farm = feedHorses(farm);
         return farm;
     }
+
+    public static Farm dinnerMeals(Farm farm) {
+        farm = feedFarmer(farm, froilanLDinner);
+        farm = feedPilot(farm, froilandaDinner);
+        farm = feedHorses(farm);
+        return farm;
+    }
+
+
 //    public static Animal eatMeal(Animal eater, Edible[] meal, Farm farm) {
 //        Silo silo = farm.getSilo();
 //        for (Edible food : meal) {

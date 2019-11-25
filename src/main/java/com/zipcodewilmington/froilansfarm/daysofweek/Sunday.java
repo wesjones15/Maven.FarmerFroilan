@@ -11,7 +11,7 @@ import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Field;
 
 public class Sunday extends Day {
     public static Farm run(Farm farm) {
-        farm = morningMeals(farm);
+        farm = morningActivities(farm);
         farm = plantField(farm);
 
         return farm;

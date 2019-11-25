@@ -17,40 +17,56 @@ public class Wednesday extends Day {
     public static final Edible[] froilanLDinner = {new EarOfCorn(), new EarOfCorn(), new Tomato(), new EdibleEgg(), new EdibleEgg()};
     public static final Edible[] froilandaDinner = {new EarOfCorn(), new Tomato(), new Tomato(), new Tomato(), new  EdibleEgg()};
 
-
-
-    public Farm Wednesday () {
-        return Day.morningMeals(farm);
-    }
-
-    public static Farm afternoonEvening (Farm farm) {
-        farm = feedFarmer (farm, froilanLunch);
-        farm = pilotLunch(farm);
-        farm = rideHorses(farm);
-        farm = feedHorses(farm);
+    public static Farm run(Farm farm){
+        farm = morningActivities(farm);
+        farm = lunchMeals(farm);
+        farm = dinnerMeals(farm);
         return farm;
     }
 
-    public static Farm farmerLunch (Farm farm){
-        Farmer farmer = farm.getFarmHouse().getFarmer();
-        farm = farmer.eatMeal(froilanLunch, farm);
-        farm.getFarmHouse().setFarmer(farmer);
-        return farm;
-        }
+//    public Farm wednesdayMorning () {
+//        return Day.morningActivities(farm);
+//    }
+//
+//    public Farm wedensdayLunch () {
+//        return Day.lunchMeals(farm);
+//    }
+//
+//    public Farm wednesdayDinner () {
+//        return Day.dinnerMeals(farm);
+//    }
 
-    public static Farm pilotLunch (Farm farm){
-        Pilot pilot = farm.getFarmHouse().getPilot();
-        farm = pilot.eatMeal(froilandaLunch, farm);
-        farm.getFarmHouse().setPilot(pilot);
-        return farm;
-    }
 
-    public static Farm farmerDinner (Farm farm){
-        Farmer farmer = farm.getFarmHouse().getFarmer();
-        farm = farmer.eatMeal(froilanLunch, farm);
-        farm.getFarmHouse().setFarmer(farmer);
-        return farm;
-    }
+
+
+//    public static Farm afternoonEvening (Farm farm) {
+//        farm = feedFarmer (farm, froilanLunch);
+//        farm = pilotLunch(farm);
+//        farm = rideHorses(farm);
+//        farm = feedHorses(farm);
+//        return farm;
+//    }
+//
+//    public static Farm farmerLunch (Farm farm){
+//        Farmer farmer = farm.getFarmHouse().getFarmer();
+//        farm = farmer.eatMeal(froilanLunch, farm);
+//        farm.getFarmHouse().setFarmer(farmer);
+//        return farm;
+//        }
+//
+//    public static Farm pilotLunch (Farm farm){
+//        Pilot pilot = farm.getFarmHouse().getPilot();
+//        farm = pilot.eatMeal(froilandaLunch, farm);
+//        farm.getFarmHouse().setPilot(pilot);
+//        return farm;
+//    }
+//
+//    public static Farm farmerDinner (Farm farm){
+//        Farmer farmer = farm.getFarmHouse().getFarmer();
+//        farm = farmer.eatMeal(froilanLunch, farm);
+//        farm.getFarmHouse().setFarmer(farmer);
+//        return farm;
+//    }
 
     public static Farm pilotDinner (Farm farm){
         Pilot pilot = farm.getFarmHouse().getPilot();
