@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.farm;
 
+import com.zipcodewilmington.froilansfarm.farm.field.Crop;
 import com.zipcodewilmington.froilansfarm.vehiclekinds.CropDuster;
 import com.zipcodewilmington.froilansfarm.vehiclekinds.Tractor;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.*;
@@ -17,8 +18,9 @@ public class Farm {
     private FarmHouse farmHouse;
     private ArrayList<ChickenCoop> chickenCoops;
     private ArrayList<Stable> stables;
+    private ArrayList<CropRow> cropRows;
 
-    public Farm(Tractor tractor, CropDuster cropDuster, Field field, Silo silo, FarmHouse farmHouse, ArrayList<ChickenCoop> chickenCoops, ArrayList<Stable> stables){
+    public Farm(Tractor tractor, CropDuster cropDuster, Field field, Silo silo, FarmHouse farmHouse, ArrayList<ChickenCoop> chickenCoops, ArrayList<Stable> stables, ArrayList<CropRow> cropRows){
         this.tractor = tractor;
         this.cropDuster = cropDuster;
         this.field = field;
@@ -26,10 +28,12 @@ public class Farm {
         this.farmHouse = farmHouse;
         this.chickenCoops = chickenCoops;
         this.stables = stables;
+        this.cropRows = cropRows;
+
     }
 
     public Farm() {
-        this(new Tractor(), new CropDuster(), new Field(), new Silo(), new FarmHouse(), new ArrayList<ChickenCoop>(), new ArrayList<Stable>());
+        this(new Tractor(), new CropDuster(), new Field(), new Silo(), new FarmHouse(), new ArrayList<ChickenCoop>(), new ArrayList<Stable>(), new ArrayList<CropRow>());
     }
 
     public Tractor getTractor() {
@@ -103,4 +107,9 @@ public class Farm {
     public Stable getStable(Integer index) {
         return stables.get(index);
     }
+
+    public ArrayList<CropRow> getCropRows () {return cropRows; }
+
+    public ArrayList<CropRow> setCropRows () {return this.cropRows = cropRows;}
+
 }

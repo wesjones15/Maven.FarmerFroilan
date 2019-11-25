@@ -13,9 +13,14 @@ public class Pilot extends Person {
         return "I'm gonna fly";
     }
 
-    public void mount() {
+    public void mount(){
 
     }
+
+    public void fertilize () {
+
+    }
+
     public Boolean fly() {
         return null;
     }

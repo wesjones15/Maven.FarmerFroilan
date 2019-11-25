@@ -9,12 +9,18 @@ import com.zipcodewilmington.froilansfarm.farm.ediblefoods.Tomato;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Farmer;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Pilot;
+import com.zipcodewilmington.froilansfarm.vehiclekinds.CropDuster;
+import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.CropRow;
+import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Field;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Silo;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Stable;
 
+import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 
 public class Day {
+    Field field;
+
     private Edible [] food;
     public static final Edible[] froilanBreakfast = {new EarOfCorn(), new Tomato(), new Tomato(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg()};
     public static final Edible[] froilandaBreakfast = {new EarOfCorn(), new EarOfCorn(), new Tomato(), new EdibleEgg(), new EdibleEgg()};
@@ -48,7 +54,6 @@ public class Day {
         farm = feedHorses(farm);
         return farm;
     }
-
 
 //    public static Animal eatMeal(Animal eater, Edible[] meal, Farm farm) {
 //        Silo silo = farm.getSilo();
@@ -101,4 +106,13 @@ public class Day {
         farm.setStables(stables);
         return farm;
     }
+
+    public static Farm fertilize(Farm farm) {
+        Pilot pilot = farm.getFarmHouse().getPilot();
+        CropDuster cropDuster = farm.getCropDuster();
+        cropDuster.mount(pilot);
+        farm = cropDuster.operate(farm);
+        return farm;
+    }
+
 }
