@@ -12,6 +12,7 @@ import com.zipcodewilmington.froilansfarm.peoplekinds.Pilot;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Silo;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Stable;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Day {
@@ -77,4 +78,14 @@ public class Day {
         farm.setStables(stables);
         return farm;
     }
+
+    public static void promptEnterKey(){
+        System.out.println("\nPress \"Enter\" to continue...");
+        try {
+            System.in.read();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

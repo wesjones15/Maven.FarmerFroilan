@@ -42,9 +42,10 @@ public class Saturday extends Day{
 
     public static void callAndRepeat(Pig napoleon, int num){
         for (int i = 0; i < num; i++){
-            System.out.println("[Napoleon]: \"" + napoleon.makeNoise() + "\"");
+            System.out.println("\n[Napoleon]: \"" + napoleon.makeNoise() + "\"");
             System.out.println("[Animals]: \"Four legs good, two legs bad.\"");
         }
+        promptEnterKey();
     }
 
     public static Farm burnItDown(Pig napoleon, Farm farm){
