@@ -6,6 +6,7 @@ import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.interfaces.Produce;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Chicken extends Animal implements Produce, Edible {
 
@@ -15,12 +16,20 @@ public class Chicken extends Animal implements Produce, Edible {
 
     private Boolean hasBeenFertilized;
 
+//    private HashMap<Integer, String> chickenNames = new HashMap<Integer, String>();
+//    chickenNames.set(1, "[Fingers]");
+//    chickenNames.put(2, "[Breasts]");
+//    chickenNames.put(3, "[Thighs]");
+//    chickenNames.put(4, "[Nuggets]");
+
+    private String[] chickenNames = new String[]{"[Fingers]", "[Breasts]", "[Thighs]", "[Nuggets]"};
+
     public Chicken(String name) {
         super(name);
     }
 
     public Chicken(){
-        super.setName("[Fingers]");
+        super.setName(chickenNames[((int)(Math.random() * ((3-0)+1)))]);
     }
 
     public Edible yield() {
