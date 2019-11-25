@@ -20,7 +20,7 @@ public class Saturday extends Day{
 
     public static Farm run(Farm farm) {
         System.out.println("\n\n-------------------- SATURDAY --------------------\n");
-        farm = morning(farm);
+        farm = morningActivities(farm);
         farm = fertilize(farm);
         napoleonEmerges(farm);
         return farm;
