@@ -12,6 +12,7 @@ import com.zipcodewilmington.froilansfarm.peoplekinds.Pilot;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Silo;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Stable;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Day {
@@ -81,6 +82,7 @@ public class Day {
         Farmer farmer = farm.getFarmHouse().getFarmer();
         farm = farmer.eatMeal(food, farm);
         farm.getFarmHouse().setFarmer(farmer);
+        System.out.println("Froilan eats his breakfast of an ear of corn, two tomatoes, and five eggs.");
         return farm;
     }
 
@@ -88,6 +90,7 @@ public class Day {
         Pilot pilot = farm.getFarmHouse().getPilot();
         farm = pilot.eatMeal(food, farm);
         farm.getFarmHouse().setPilot(pilot);
+        System.out.println("Froilanda eats her breakfast of two ears of corn, a tomato, and two eggs.");
         return farm;
     }
 
@@ -99,6 +102,22 @@ public class Day {
             }
         }
         farm.setStables(stables);
+        System.out.println("Froilan feeds the horses three ears of corn each.");
         return farm;
     }
+
+    public static void promptEnterKey(){
+        System.out.println("\nPress \"Enter\" to continue...");
+        try {
+            System.in.read();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void printDaySummary(Farm farm){
+//        System.out.println("Silo Contents:\n");
+        System.out.println(farm.getSilo().toString());
+    }
+
 }
