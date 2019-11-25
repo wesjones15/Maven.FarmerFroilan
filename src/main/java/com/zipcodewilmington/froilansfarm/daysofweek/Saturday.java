@@ -35,20 +35,32 @@ public class Saturday extends Day{
 
     public static Farm napoleonEmerges(Farm farm){
         Pig napoleon = farm.getYard().getPig();
-        System.out.println(napoleon.makeNoise());
-        burnItDown(farm);
+        callAndRepeat(napoleon, 5);
+        burnItDown(napoleon, farm);
         return farm;
     }
 
-    public static Farm burnItDown(Farm farm){
+    public static void callAndRepeat(Pig napoleon, int num){
+        for (int i = 0; i < num; i++){
+            System.out.println("[Napoleon]: \"" + napoleon.makeNoise() + "\"");
+            System.out.println("[Animals]: \"Four legs good, two legs bad.\"");
+        }
+    }
+
+    public static Farm burnItDown(Pig napoleon, Farm farm){
         // set everything to zero
         // can I kill anyone???
         farm.setSilo(null);
-        System.out.println("The silo is on fire\n");
+        System.out.println("\nThe silo is on fire........");
+        callAndRepeat(napoleon, 1);
         farm.setFarmHouse(null);
-        System.out.println("The farmhouse is on fire\n");
+        System.out.println("\nThe farmhouse is on fire........");
+        callAndRepeat(napoleon, 1);
         farm.setField(null);
-        System.out.println("The crops are on fire\n");
+        System.out.println("\nThe crops are on fire........");
+        callAndRepeat(napoleon, 1);
+        System.out.println("\nThe farmers are both missing.........");
+        callAndRepeat(napoleon, 1);
         System.out.println(asciiBurnArt());
         return farm;
     }
