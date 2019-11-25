@@ -14,7 +14,6 @@ public class Sunday extends Day {
         System.out.println("\n\n-------------------- SUNDAY --------------------\n");
         farm = morning(farm);
         farm = plantField(farm);
-        System.out.println("Froilan spends all day planting the fields.");
         printDaySummary(farm);
         System.out.println();
         printSundayNarrative();
@@ -40,6 +39,7 @@ public class Sunday extends Day {
             field.add(cropRow);
         }
         farm.setField(field);
+        System.out.println("Froilan spends all day planting the fields.");
         return farm;
     }
 

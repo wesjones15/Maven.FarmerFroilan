@@ -20,6 +20,7 @@ public class Tuesday extends Day {
         Tractor tractor = farm.getTractor();
         tractor.mount(farmer);
         farm = tractor.operate(farm);
+        System.out.println("Froilan harvests the new crops.");
         return farm;
     }
 

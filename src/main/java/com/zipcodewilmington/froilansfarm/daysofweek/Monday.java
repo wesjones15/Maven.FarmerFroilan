@@ -22,6 +22,7 @@ public class Monday extends Day {
         CropDuster cropDuster = farm.getCropDuster();
         cropDuster.mount(pilot);
         farm = cropDuster.operate(farm);
+        System.out.println("Froilanda fertilizes all of the crops in her crop duster.");
         return farm;
     }
 
