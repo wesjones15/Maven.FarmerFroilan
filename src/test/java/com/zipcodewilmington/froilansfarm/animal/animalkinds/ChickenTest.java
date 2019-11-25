@@ -7,9 +7,12 @@ import com.zipcodewilmington.froilansfarm.interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.interfaces.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.interfaces.Produce;
+import org.hamcrest.core.StringContains;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertThat;
+import static org.hamcrest.CoreMatchers.containsString;
 
 import java.util.ArrayList;
 
@@ -17,11 +20,13 @@ public class ChickenTest {
 
     Chicken testChicken;
     Edible corn;
+    String defaultChickenNames;
 
     @Before
     public void setUp(){
         testChicken = new Chicken();
         corn = new EarOfCorn();
+        defaultChickenNames = "[Fingers] [Breasts] [Thighs] [Nuggets]";
     }
 
     @Test
@@ -76,7 +81,7 @@ public class ChickenTest {
 
     @Test
     public void testGetName(){
-        Assert.assertEquals("[Fingers]", testChicken.getName());
+        Assert.assertThat(defaultChickenNames, StringContains.containsString(testChicken.getName()));
     }
 
     @Test

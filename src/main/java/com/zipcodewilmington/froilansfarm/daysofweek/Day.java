@@ -15,11 +15,14 @@ import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Field;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Silo;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Stable;
 
-import java.awt.image.AreaAveragingScaleFilter;
+
+import java.io.IOException;
+
 import java.util.ArrayList;
 
 public class Day {
-    Field field;
+    private Field field;
+    private Farm farm;
 
     private Edible [] food;
     public static final Edible[] froilanBreakfast = {new EarOfCorn(), new Tomato(), new Tomato(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg()};
@@ -68,6 +71,7 @@ public class Day {
 //        farm.setSilo(silo);
 //        return eater;
 //    }
+
     public static Farm rideHorses(Farm farm) {
         ArrayList<Stable> stables = farm.getStables();
         Farmer farmer = farm.getFarmHouse().getFarmer();
@@ -107,12 +111,23 @@ public class Day {
         return farm;
     }
 
+
     public static Farm fertilize(Farm farm) {
         Pilot pilot = farm.getFarmHouse().getPilot();
         CropDuster cropDuster = farm.getCropDuster();
         cropDuster.mount(pilot);
         farm = cropDuster.operate(farm);
         return farm;
+    }
+
+    public static void promptEnterKey(){
+        System.out.println("\nPress \"Enter\" to continue...");
+        try {
+            System.in.read();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

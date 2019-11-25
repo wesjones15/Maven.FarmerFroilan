@@ -6,21 +6,20 @@ import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.interfaces.Produce;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Chicken extends Animal implements Produce, Edible {
 
-    // maybe establish a map of names with int keys
-    // then make the nullary constructor draw the name using a key and a random number generator
-    // names could be [Breast], [Thigh], and [Fingers]
-
     private Boolean hasBeenFertilized;
+
+    private String[] chickenNames = new String[]{"[Fingers]", "[Breasts]", "[Thighs]", "[Nuggets]"};
 
     public Chicken(String name) {
         super(name);
     }
 
     public Chicken(){
-        super.setName("[Fingers]");
+        super.setName(chickenNames[((int)(Math.random() * ((3-0)+1)))]);
     }
 
     public Edible yield() {
