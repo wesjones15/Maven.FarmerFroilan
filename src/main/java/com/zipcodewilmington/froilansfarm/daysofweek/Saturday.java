@@ -19,6 +19,7 @@ public class Saturday extends Day{
 
 
     public static Farm run(Farm farm) {
+        System.out.println("\n\n-------------------- SATURDAY --------------------\n");
         farm = morning(farm);
         farm = fertilize(farm);
         napoleonEmerges(farm);
@@ -34,6 +35,9 @@ public class Saturday extends Day{
     }
 
     public static Farm napoleonEmerges(Farm farm){
+        System.out.println("\nAs Froilan and Froilanda finish their breakfast, they hear a noise from outside.\n" +
+                "It sounds like chanting..........\n");
+        promptEnterKey();
         Pig napoleon = farm.getYard().getPig();
         callAndRepeat(napoleon, 5);
         burnItDown(napoleon, farm);

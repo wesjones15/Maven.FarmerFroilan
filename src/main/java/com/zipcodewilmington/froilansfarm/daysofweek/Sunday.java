@@ -11,9 +11,14 @@ import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Field;
 
 public class Sunday extends Day {
     public static Farm run(Farm farm) {
+        System.out.println("\n\n-------------------- SUNDAY --------------------\n");
         farm = morning(farm);
         farm = plantField(farm);
-
+        System.out.println("Froilan spends all day planting the fields.");
+        printDaySummary(farm);
+        System.out.println();
+        printSundayNarrative();
+        promptEnterKey();
         return farm;
     }
 
@@ -53,4 +58,13 @@ public class Sunday extends Day {
         }
         return cropRow;
     }
+
+    public static void printSundayNarrative(){
+        System.out.println(
+                "All is well on the farm.\n" +
+                "Your chickens and horses are content.\n" +
+                "Your prize pig, Napoleon, is happy.\n" +
+                "Your puppy is wet.");
+    }
+
 }

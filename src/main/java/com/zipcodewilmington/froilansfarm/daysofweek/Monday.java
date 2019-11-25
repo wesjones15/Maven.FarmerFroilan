@@ -8,8 +8,12 @@ import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Field;
 
 public class Monday extends Day {
     public static Farm run(Farm farm) {
+        System.out.println("\n\n-------------------- MONDAY --------------------\n");
         farm = morning(farm);
         farm = fertilize(farm);
+        printDaySummary(farm);
+        printMondayNarrative();
+        promptEnterKey();
         return farm;
     }
 
@@ -21,6 +25,10 @@ public class Monday extends Day {
         return farm;
     }
 
-
+    private static void printMondayNarrative() {
+        System.out.println(
+                "All is well on the farm.\n" +
+                "The chickens roost, the horses neigh, and Napoleon is enjoying the company of the other animals.");
+    }
 
 }
