@@ -56,15 +56,15 @@ public class Saturday extends Day{
         // set everything to zero
         // can I kill anyone???
         farm.setSilo(null);
-        System.out.println("\nThe silo is on fire........");
+        System.out.println(ANSI_RED + "\nThe silo is on fire........" + ANSI_RESET);
         callAndRepeat(napoleon, 1);
         farm.setFarmHouse(null);
-        System.out.println("\nThe farmhouse is on fire........");
+        System.out.println(ANSI_RED + "\nThe farmhouse is on fire........" + ANSI_RESET);
         callAndRepeat(napoleon, 1);
         farm.setField(null);
-        System.out.println("\nThe crops are on fire........");
+        System.out.println(ANSI_RED + "\nThe crops are on fire........" + ANSI_RESET);
         callAndRepeat(napoleon, 1);
-        System.out.println("\nThe farmers are both missing.........");
+        System.out.println(ANSI_RED + "\nThe farmers are both missing........." + ANSI_RESET);
         callAndRepeat(napoleon, 1);
         System.out.println(asciiBurnArt());
         return farm;
