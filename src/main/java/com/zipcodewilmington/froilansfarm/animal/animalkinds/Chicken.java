@@ -10,17 +10,7 @@ import java.util.HashMap;
 
 public class Chicken extends Animal implements Produce, Edible {
 
-    // maybe establish a map of names with int keys
-    // then make the nullary constructor draw the name using a key and a random number generator
-    // names could be [Breast], [Thigh], and [Fingers]
-
     private Boolean hasBeenFertilized;
-
-//    private HashMap<Integer, String> chickenNames = new HashMap<Integer, String>();
-//    chickenNames.set(1, "[Fingers]");
-//    chickenNames.put(2, "[Breasts]");
-//    chickenNames.put(3, "[Thighs]");
-//    chickenNames.put(4, "[Nuggets]");
 
     private String[] chickenNames = new String[]{"[Fingers]", "[Breasts]", "[Thighs]", "[Nuggets]"};
 
