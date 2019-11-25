@@ -4,7 +4,6 @@ import com.zipcodewilmington.froilansfarm.farm.ediblefoods.EarOfCorn;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 
 public class CornStalk extends Crop {
-
     public CornStalk() {
         hasBeenFertilized = false;
         hasBeenHarvested = false;
@@ -17,5 +16,4 @@ public class CornStalk extends Crop {
         }
         return null;
     }
-
 }

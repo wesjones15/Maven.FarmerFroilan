@@ -1,8 +1,10 @@
 package com.zipcodewilmington.froilansfarm.animal;
 
+import com.zipcodewilmington.froilansfarm.farm.Farm;
 import com.zipcodewilmington.froilansfarm.interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.interfaces.NoiseMaker;
+import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Silo;
 
 import java.util.ArrayList;
 
@@ -25,6 +27,19 @@ public abstract class Animal implements NoiseMaker, Eater {
     //get hunger level by checking size of stomachContents
     //ENUMS for HUNGRY, SATIATED, and FULL
 
+    public Farm eatMeal(Edible[] meal, Farm farm) {
+        Silo silo = farm.getSilo();
+        for (Edible food : meal) {
+            Edible morsel = silo.getFood(food);
+            if (morsel == null) {
+                // we don't have any of that food
+                break;
+            }
+            eat(morsel);
+        }
+        farm.setSilo(silo);
+        return farm;
+    }
 
     public ArrayList<Edible> getStomachContents() {
         return stomachContents;

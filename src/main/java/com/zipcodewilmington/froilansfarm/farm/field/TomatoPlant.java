@@ -1,6 +1,5 @@
 package com.zipcodewilmington.froilansfarm.farm.field;
 
-import com.zipcodewilmington.froilansfarm.farm.ediblefoods.EarOfCorn;
 import com.zipcodewilmington.froilansfarm.farm.ediblefoods.Tomato;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 
