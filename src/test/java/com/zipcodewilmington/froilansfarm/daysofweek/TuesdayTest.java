@@ -12,6 +12,7 @@ import org.junit.Test;
 
 public class TuesdayTest {
     Farm farm;
+    Field field;
 
     @Before
     public void setUp() {
@@ -24,7 +25,9 @@ public class TuesdayTest {
 
     @Test
     public void testHarvest1() {
-        farm = Tuesday.run(farm);
+        farm = Day.plantField(farm);
+        farm = Day.fertilize(farm);
+        farm = Day.harvest(farm);
         Field field = farm.getField();
         for (CropRow cropRow : field.get()) {
             for (Crop crop : cropRow.get()) {
@@ -35,12 +38,15 @@ public class TuesdayTest {
 
     @Test
     public void testHarvest2() {
+        field = farm.getField();
         String prev = farm.getSilo().toString();
-        farm = Sunday.run(farm);
-        farm = Monday.run(farm);
-        farm = Tuesday.run(farm);
+        farm = Day.plantField(farm);
+        farm = Day.fertilize(farm);
+        farm = Day.harvest(farm);
         String after = farm.getSilo().toString();
+        //System.out.println(prev);
         Assert.assertNotEquals(prev, after);
+        //System.out.println(after);
         String expected = "Silo Inventory\n" +
                 "\tEarOfCorn x 1520\n" +
                 "\tTomato x 1020\n" +

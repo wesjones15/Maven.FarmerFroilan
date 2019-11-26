@@ -45,12 +45,13 @@ public class Tractor extends FarmVehicle implements Vehicle {
         Silo silo = farm.getSilo();
         for (CropRow cropRow : field.get()) { // farm.getField().getCropRows()) {
             silo.addAll(harvest(cropRow));
-
         }
         farmer.dismount();
         this.dismount();
         farm.setSilo(silo);
+        System.out.println("Ridin' my tractor to get these crops harvested!");
         return farm;
+
     }
 
 
@@ -62,6 +63,7 @@ public class Tractor extends FarmVehicle implements Vehicle {
                 harvestYield.add(food);
             }
         }
+
         return harvestYield;
     }
 }
