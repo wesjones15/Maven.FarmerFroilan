@@ -1,10 +1,12 @@
 package com.zipcodewilmington.froilansfarm.daysofweek;
 
 import com.zipcodewilmington.froilansfarm.animal.animalkinds.Chicken;
+import com.zipcodewilmington.froilansfarm.animal.animalkinds.Pig;
 import com.zipcodewilmington.froilansfarm.farm.Farm;
 import com.zipcodewilmington.froilansfarm.farm.ediblefoods.EdibleEgg;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Farmer;
+import com.zipcodewilmington.froilansfarm.utils.Console;
 import com.zipcodewilmington.froilansfarm.vehiclekinds.Tractor;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Silo;
@@ -16,6 +18,7 @@ public class Friday extends Day{
         System.out.println("\n\n-------------------- FRIDAY --------------------\n");
         farm = morningActivities(farm);
         farm = harvest(farm);
+        farm = napoleonRising(farm);
         return farm;
     }
 
@@ -37,5 +40,27 @@ public class Friday extends Day{
         return farm;
     }
 
+    public static Farm napoleonRising(Farm farm){
+        Console.println("As Froilanda is walking past the barn, she sees Napoleon on wooden box squealing.\n");
+        promptEnterKey();
+        Pig napoleon = farm.getYard().getPig();
+        napoleonStare(napoleon, farm);
+        napoleonThreaten(napoleon, 2);
+        promptEnterKey();
+        return farm;
+    }
 
+    public static void napoleonStare(Pig napoleon, Farm farm){
+        Console.println("The animals turn to Froilanda and disperse as Napoleon stares at her.");
+        promptEnterKey();
+        Console.println("As Froilanda as she begins to walk away, Napoleon mumbles quietly.");
+        promptEnterKey();
+    }
+
+    public static void napoleonThreaten(Pig napoleon, int num) {
+        for (int i = 0; i < num; i++) {
+            Console.println("\n[Napoleon]: \"" + napoleon.makeNoise() + "\"");
+        }
+        promptEnterKey();
+    }
 }

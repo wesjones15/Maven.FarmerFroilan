@@ -7,73 +7,66 @@ import com.zipcodewilmington.froilansfarm.farm.ediblefoods.Tomato;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Farmer;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Pilot;
+import com.zipcodewilmington.froilansfarm.utils.Console;
 
 
 public class Wednesday extends Day {
-    Farm farm;
-    public static final Edible[] froilanLunch = {new EarOfCorn(), new Tomato(), new Tomato(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg()};
-    public static final Edible[] froilandaLunch = {new EarOfCorn(), new Tomato(), new EdibleEgg(), new EdibleEgg()};
-
-    public static final Edible[] froilanLDinner = {new EarOfCorn(), new EarOfCorn(), new Tomato(), new EdibleEgg(), new EdibleEgg()};
-    public static final Edible[] froilandaDinner = {new EarOfCorn(), new Tomato(), new Tomato(), new Tomato(), new  EdibleEgg()};
 
     public static Farm run(Farm farm){
+        Console.println("\n\n-------------------- WEDNESDAY --------------------\n");
         farm = morningActivities(farm);
         farm = lunchMeals(farm);
+        farm = fertilize(farm);
+        farm = harvest(farm);
         farm = dinnerMeals(farm);
+        printDaySummary(farm);
+        printMondayNarrative();
+        promptEnterKey();
         return farm;
     }
 
-//    public Farm wednesdayMorning () {
-//        return Day.morningActivities(farm);
-//    }
-//
-//    public Farm wedensdayLunch () {
-//        return Day.lunchMeals(farm);
-//    }
-//
-//    public Farm wednesdayDinner () {
-//        return Day.dinnerMeals(farm);
-//    }
+    private static void printMondayNarrative() {
+        Console.println(
+                "Things are normal on the farm.\n" +
+                        "The chickens roost, the horses neigh, and Napoleon is enjoying the company of the other animals.\n" +
+                        "The animals are happy it's hump day - they start making their plans for the weekend\n\n" +
+                        "There is faint singing in the background........\n" +
+                        "Beasts of England, beasts of Ireland\n" +
+                        "Beasts of every land and clime\n" +
+                        "Hearken to my joyful tidings\n" +
+                        "Of the golden future time\n" +
+                        "\n" +
+                        "Soon or late the day is coming\n" +
+                        "Tyrant Man shall be o'erthrown\n" +
+                        "And the fruitful fields of England\n" +
+                        "Shall be trod by beasts alone\n" +
+                        "\n" +
+                        "Rings shall vanish from our noses\n" +
+                        "And the harness from our back\n" +
+                        "Bit and spur shall rust forever\n" +
+                        "Cruel whips no more shall crack\n" +
+                        "\n" +
+                        "Riches more than mind can picture\n" +
+                        "Wheat and barley, oats and hay\n" +
+                        "Clover, beans, and mangel-wurzels\n" +
+                        "Shall be ours upon that day\n" +
+                        "\n" +
+                        "Bright will shine the fields of England\n" +
+                        "Purer shall its waters be\n" +
+                        "Sweeter yet shall blow its breezes\n" +
+                        "On the day that sets us free\n" +
+                        "\n" +
+                        "For that day we all must labour\n" +
+                        "Though we die before it break\n" +
+                        "Cows and horses, geese and turkeys\n" +
+                        "All must toil for freedom's sake\n" +
+                        "\n" +
+                        "Beasts of England, beasts of Ireland\n" +
+                        "Beasts of every land and clime\n" +
+                        "Hearken well and spread my tidings\n" +
+                        "Of the golden future time");
+    }
 
-
-
-
-//    public static Farm afternoonEvening (Farm farm) {
-//        farm = feedFarmer (farm, froilanLunch);
-//        farm = pilotLunch(farm);
-//        farm = rideHorses(farm);
-//        farm = feedHorses(farm);
-//        return farm;
-//    }
-//
-//    public static Farm farmerLunch (Farm farm){
-//        Farmer farmer = farm.getFarmHouse().getFarmer();
-//        farm = farmer.eatMeal(froilanLunch, farm);
-//        farm.getFarmHouse().setFarmer(farmer);
-//        return farm;
-//        }
-//
-//    public static Farm pilotLunch (Farm farm){
-//        Pilot pilot = farm.getFarmHouse().getPilot();
-//        farm = pilot.eatMeal(froilandaLunch, farm);
-//        farm.getFarmHouse().setPilot(pilot);
-//        return farm;
-//    }
-//
-//    public static Farm farmerDinner (Farm farm){
-//        Farmer farmer = farm.getFarmHouse().getFarmer();
-//        farm = farmer.eatMeal(froilanLunch, farm);
-//        farm.getFarmHouse().setFarmer(farmer);
-//        return farm;
-//    }
-
-    public static Farm pilotDinner (Farm farm){
-        Pilot pilot = farm.getFarmHouse().getPilot();
-        farm = pilot.eatMeal(froilandaLunch, farm);
-        farm.getFarmHouse().setPilot(pilot);
-        return farm;
-}
 
 
 

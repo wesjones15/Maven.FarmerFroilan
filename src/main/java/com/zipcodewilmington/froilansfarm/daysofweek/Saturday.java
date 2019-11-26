@@ -3,6 +3,7 @@ package com.zipcodewilmington.froilansfarm.daysofweek;
 import com.zipcodewilmington.froilansfarm.animal.animalkinds.Pig;
 import com.zipcodewilmington.froilansfarm.farm.Farm;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Pilot;
+import com.zipcodewilmington.froilansfarm.utils.Console;
 import com.zipcodewilmington.froilansfarm.vehiclekinds.CropDuster;
 
 public class Saturday extends Day{
@@ -19,7 +20,7 @@ public class Saturday extends Day{
 
 
     public static Farm run(Farm farm) {
-        System.out.println("\n\n-------------------- SATURDAY --------------------\n");
+        Console.println("\n\n-------------------- SATURDAY --------------------\n");
         farm = morningActivities(farm);
         farm = fertilize(farm);
         napoleonEmerges(farm);
@@ -35,7 +36,7 @@ public class Saturday extends Day{
     }
 
     public static Farm napoleonEmerges(Farm farm){
-        System.out.println("\nAs Froilan and Froilanda finish their breakfast, they hear a noise from outside.\n" +
+        Console.println("\nAs Froilan and Froilanda finish their breakfast, they hear a noise from outside.\n" +
                 "It sounds like chanting..........\n");
         promptEnterKey();
         Pig napoleon = farm.getYard().getPig();
@@ -46,8 +47,8 @@ public class Saturday extends Day{
 
     public static void callAndRepeat(Pig napoleon, int num){
         for (int i = 0; i < num; i++){
-            System.out.println("\n[Napoleon]: \"" + napoleon.makeNoise() + "\"");
-            System.out.println("[Animals]: \"Four legs good, two legs bad.\"");
+            Console.println("\n[Napoleon]: \"" + napoleon.makeNoise() + "\"");
+            Console.println("[Animals]: \"Four legs good, two legs bad.\"");
         }
         promptEnterKey();
     }
@@ -56,17 +57,17 @@ public class Saturday extends Day{
         // set everything to zero
         // can I kill anyone???
         farm.setSilo(null);
-        System.out.println(ANSI_RED + "\nThe silo is on fire........" + ANSI_RESET);
+        Console.println(ANSI_RED + "\nThe silo is on fire........" + ANSI_RESET);
         callAndRepeat(napoleon, 1);
         farm.setFarmHouse(null);
-        System.out.println(ANSI_RED + "\nThe farmhouse is on fire........" + ANSI_RESET);
+        Console.println(ANSI_RED + "\nThe farmhouse is on fire........" + ANSI_RESET);
         callAndRepeat(napoleon, 1);
         farm.setField(null);
-        System.out.println(ANSI_RED + "\nThe crops are on fire........" + ANSI_RESET);
+        Console.println(ANSI_RED + "\nThe crops are on fire........" + ANSI_RESET);
         callAndRepeat(napoleon, 1);
-        System.out.println(ANSI_RED + "\nThe farmers are both missing........." + ANSI_RESET);
+        Console.println(ANSI_RED + "\nThe farmers are both missing........." + ANSI_RESET);
         callAndRepeat(napoleon, 1);
-        System.out.println(asciiBurnArt());
+        Console.println(asciiBurnArt());
         return farm;
     }
 
@@ -86,8 +87,8 @@ public class Saturday extends Day{
                 "'-'-'-" + ANSI_RED + " ' (( (\" )" + ANSI_RESET + "[=]/'-'-'-/'.=:=:" + ANSI_RED + "." + ANSI_RESET + ":=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=\n" +
                 "-'-'-'" + ANSI_RED + ",._'_.,)_(." + ANSI_RESET + "'-'-'-'-/   '.   " + ANSI_RED + ")" + ANSI_RESET + "                                  |\n" +
                 "'-'-'-'-'-'-'-'-'-'-'-'-/    .-'" + ANSI_RED + "((" + ANSI_RESET + "          .--.--.                |/|\n" +
-                "-'-'-'-'-'-'-'-'-'-'-'-/ _.-'.-:" + ANSI_RED + "' )" + ANSI_RESET + "       .; .;|;. ;.            |/|/ \n" +
-                "       ___       ___   |' _.'\\ :|--|--|- .;_;'   ';_;. --|--|--|/|/   \n" +
+                "-'ALL ANIMALS ARE'-'-'-/ _.-'.-:" + ANSI_RED + "' )" + ANSI_RESET + "       .; .;|;. ;.            |/|/ \n" +
+                "   CREATED EQUAL ___   |' _.'\\ :|--|--|- .;_;'   ';_;. --|--|--|/|/   \n" +
                 "|]   [|_|_|]   [|_|_|] | |\\ | \\:|--|--| ; ;'       '; ; -|--|--|/     \n" +
                 "|]   [|_|_|]   [|_|_|] | | \\|--'       ;; .--.___.--. ;;     " + ANSI_RED + ")" + ANSI_RESET + "       \n" +
                 "_______________________| |.-'          ;-[(_) )=( (_)]-;   " + ANSI_RED + "(" + ANSI_RESET + "\n" +

@@ -50,9 +50,6 @@ public class CropDuster extends FarmVehicle implements AirCraft, Vehicle {
 
     public Boolean fly() {
         flying = (pilot instanceof Pilot);
-//        if (pilot instanceof Pilot) {
-//            flying = true;
-//        } else flying = false;
         return flying;
     }
 
@@ -66,6 +63,5 @@ public class CropDuster extends FarmVehicle implements AirCraft, Vehicle {
         for (Crop crop : cropRow.get()) {
             crop.setHasBeenFertilized(true);
         }
-//        return cropRow;
     }
 }

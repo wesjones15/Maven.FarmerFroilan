@@ -68,30 +68,30 @@ public class WednesdayTest {
         }
     }
 
+//          Already has been tested in Day test
+//    @Test
+//    public void testHarvest1() {
+//        farm = Tuesday.run(farm);
+//        Field field = farm.getField();
+//        for (CropRow cropRow : field.get()) {
+//            for (Crop crop : cropRow.get()) {
+//                Assert.assertTrue(crop.getHasBeenHarvested());
+//            }
+//        }
+//    }
 
-    @Test
-    public void testHarvest1() {
-        farm = Tuesday.run(farm);
-        Field field = farm.getField();
-        for (CropRow cropRow : field.get()) {
-            for (Crop crop : cropRow.get()) {
-                Assert.assertTrue(crop.getHasBeenHarvested());
-            }
-        }
-    }
-
-    @Test
-    public void testHarvest2() {
-        String prev = farm.getSilo().toString();
-        farm = Sunday.run(farm);
-        farm = Monday.run(farm);
-        farm = Tuesday.run(farm);
-        String after = farm.getSilo().toString();
-        Assert.assertNotEquals(prev, after);
-        String expected = "Silo Inventory\n" +
-                "\tEarOfCorn x 1520\n" +
-                "\tTomato x 1020\n" +
-                "\tEdibleEgg x 20";
-        Assert.assertEquals(expected, after);
-    }
+//    @Test
+//    public void testHarvest2() {
+//        String prev = farm.getSilo().toString();
+//        farm = Sunday.run(farm);
+//        farm = Monday.run(farm);
+//        farm = Tuesday.run(farm);
+//        String after = farm.getSilo().toString();
+//        Assert.assertNotEquals(prev, after);
+//        String expected = "Silo Inventory\n" +
+//                "\tEarOfCorn x 1520\n" +
+//                "\tTomato x 1020\n" +
+//                "\tEdibleEgg x 20";
+//        Assert.assertEquals(expected, after);
+//    }
 }
