@@ -1,11 +1,14 @@
 package com.zipcodewilmington.froilansfarm.peoplekinds;
 
+import com.zipcodewilmington.froilansfarm.animal.animalkinds.Chicken;
 import com.zipcodewilmington.froilansfarm.animal.animalkinds.Horse;
 import com.zipcodewilmington.froilansfarm.farm.Farm;
 import com.zipcodewilmington.froilansfarm.farm.ediblefoods.EarOfCorn;
+import com.zipcodewilmington.froilansfarm.farm.ediblefoods.EdibleEgg;
 import com.zipcodewilmington.froilansfarm.farm.field.Crop;
 import com.zipcodewilmington.froilansfarm.interfaces.Botanist;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
+import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.CropRow;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Stable;
 
@@ -54,11 +57,8 @@ public class Farmer extends Person implements Botanist {
 
 //    }
 
-
-    //cropRow index 0 is Corn, cropRow index 1 is Tomato, and cropRow index 3+ some sort of arbitrary crop
-    public void plant (Farm farm) {
-
-
+    public EdibleEgg harvestChicken(Chicken chicken){
+            return chicken.yield();
     }
 
 //    public void eat(Edible food) {

@@ -1,10 +1,9 @@
 package com.zipcodewilmington.froilansfarm.farm;
 
+import com.zipcodewilmington.froilansfarm.animal.animalkinds.Chicken;
 import com.zipcodewilmington.froilansfarm.vehiclekinds.CropDuster;
 import com.zipcodewilmington.froilansfarm.vehiclekinds.Tractor;
-import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.ChickenCoop;
-import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.FarmHouse;
-import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Silo;
+import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,10 +12,14 @@ import java.util.ArrayList;
 
 public class FarmTest {
     Farm farm;
+    Stable stable;
+    ChickenCoop chickenCoop;
 
     @Before
     public void setUp(){
         farm = new Farm();
+        stable = new Stable();
+        chickenCoop = new ChickenCoop();
     }
 
     @Test
@@ -39,6 +42,13 @@ public class FarmTest {
     }
 
     @Test
+    public void testSetField(){
+        Field field = new Field();
+        farm.setField(field);
+        Assert.assertEquals(field, farm.getField());
+    }
+
+    @Test
     public void testSetSilo(){
         Silo container = new Silo();
         farm.setSilo(container);
@@ -52,10 +62,19 @@ public class FarmTest {
         Assert.assertEquals(container, farm.getFarmHouse());
     }
 
-//    @Test
-//    public void testSetChickenCoops(){
-//        ArrayList<ChickenCoop> chickenCoops = new ArrayList<ChickenCoop>();
-//        farm.setFarmHouse(container);
-//        Assert.assertEquals(container, farm.getFarmHouse());
-//    }
+    @Test
+    public void testSetChickenCoops(){
+        farm.addChickenCoop();
+        ArrayList<ChickenCoop> expected = new ArrayList<ChickenCoop>();
+        expected.add(chickenCoop);
+        Assert.assertTrue(expected.contains(chickenCoop));
+    }
+
+    @Test
+    public void testSetStable(){
+        farm.addStable();
+        ArrayList<Stable> expected = new ArrayList<Stable>();
+        expected.add(stable);
+        Assert.assertTrue(expected.contains(stable));
+    }
 }

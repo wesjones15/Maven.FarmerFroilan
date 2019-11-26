@@ -22,7 +22,7 @@ public class Chicken extends Animal implements Produce, Edible {
         super.setName(chickenNames[((int)(Math.random() * ((3-0)+1)))]);
     }
 
-    public Edible yield() {
+    public EdibleEgg yield() {
         if (hasBeenFertilized == false){
             return new EdibleEgg();
         }
