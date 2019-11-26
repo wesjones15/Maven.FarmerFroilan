@@ -8,7 +8,6 @@ import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Field;
 
 public class Monday extends Day {
     public static Farm run(Farm farm) {
-        farm = morningActivities(farm);
         System.out.println("\n\n-------------------- MONDAY --------------------\n");
         farm = morningActivities(farm);
         farm = fertilize(farm);
