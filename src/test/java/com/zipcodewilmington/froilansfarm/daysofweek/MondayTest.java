@@ -17,7 +17,7 @@ public class MondayTest {
     public void setUp() {
         Simulation sim = new Simulation();
         farm = new Farm();
-        farm.setSilo(sim.preFillSilo());
+        farm.setSilo(sim.preFillSilo(20));
         farm.getFarmHouse().add(new Farmer("Froilan"));
         farm.getFarmHouse().add(new Pilot("Froilanda"));
     }

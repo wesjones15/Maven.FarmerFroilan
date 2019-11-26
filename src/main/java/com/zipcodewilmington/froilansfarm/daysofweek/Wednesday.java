@@ -21,7 +21,7 @@ public class Wednesday extends Day {
         farm = dinnerMeals(farm);
         printDaySummary(farm);
         printMondayNarrative();
-        promptEnterKey();
+//        promptEnterKey();
         return farm;
     }
 
@@ -29,8 +29,8 @@ public class Wednesday extends Day {
         Console.println(
                 "Things are normal on the farm.\n" +
                         "The chickens roost, the horses neigh, and Napoleon is enjoying the company of the other animals.\n" +
-                        "The animals are happy it's hump day - they start making their plans for the weekend\n\n" +
-                        "There is faint singing in the background........\n" +
+                        "The animals are happy it's hump day - they start making their plans for the weekend\n\n\n" +
+                        "There is faint singing in the background........\n\n" +
                         "Beasts of England, beasts of Ireland\n" +
                         "Beasts of every land and clime\n" +
                         "Hearken to my joyful tidings\n" +

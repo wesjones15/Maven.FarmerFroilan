@@ -16,7 +16,7 @@ public class SiloTest {
         Silo silo = new Silo();
         EarOfCorn corn = new EarOfCorn();
         silo.add(corn);
-        Assert.assertEquals(corn, silo.get().get(0));
+        Assert.assertEquals((Integer) 1, silo.getAmountOf(corn));
     }
 
     @Test
@@ -26,7 +26,7 @@ public class SiloTest {
         silo.add(corn);
         silo.add(corn);
 
-        Assert.assertEquals(2, silo.get().size());
+        Assert.assertEquals((Integer) 2, silo.size());
     }
 
     @Test
@@ -35,7 +35,7 @@ public class SiloTest {
         EarOfCorn corn = new EarOfCorn();
         silo.add(corn);
         silo.remove(corn);
-        Assert.assertTrue(silo.get().isEmpty());
+        Assert.assertTrue(silo.size() == 0);
     }
 
     @Test
@@ -45,7 +45,9 @@ public class SiloTest {
         silo.add(corn);
         silo.add(corn);
         silo.removeAll();
-        Assert.assertTrue(silo.get().isEmpty());
+        Integer expected = 0;
+        Integer actual = silo.size();
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -55,7 +57,7 @@ public class SiloTest {
         Tomato tomato = new Tomato();
         ArrayList<Edible> harvest = new ArrayList<Edible>(Arrays.asList(corn, corn, tomato, tomato, corn, corn));
         silo.addAll(harvest);
-        Assert.assertEquals(6, silo.get().size());
+        Assert.assertEquals((Integer) 6, silo.size());
     }
 
     @Test
@@ -90,8 +92,9 @@ public class SiloTest {
         ArrayList<Edible> harvest = new ArrayList<Edible>(Arrays.asList(corn, corn, tomato, tomato, corn, corn));
         silo.addAll(harvest);
         Edible actual = silo.getFood(corn);
-        Assert.assertEquals(corn, actual);
-        Assert.assertEquals(5, silo.get().size());
+        Assert.assertEquals(corn.getClass().getSimpleName(), actual.getClass().getSimpleName());
+
+        Assert.assertEquals((Integer) 5, silo.size());
     }
 
     @Test
@@ -104,7 +107,7 @@ public class SiloTest {
         Edible actual = silo.getFood(tomato);
 
         Assert.assertNull(actual);
-        Assert.assertEquals(6, silo.get().size());
+        Assert.assertEquals((Integer) 6, silo.size());
     }
 
     @Test
