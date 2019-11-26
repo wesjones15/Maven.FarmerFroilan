@@ -4,6 +4,7 @@ import com.zipcodewilmington.froilansfarm.farm.Farm;
 import com.zipcodewilmington.froilansfarm.interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.interfaces.NoiseMaker;
+import com.zipcodewilmington.froilansfarm.utils.Console;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Silo;
 
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public abstract class Animal implements NoiseMaker, Eater {
         for (Edible food : meal) {
             Edible morsel = silo.getFood(food);
             if (morsel == null) {
-                // we don't have any of that food
+                Console.println("we don't have any of that food");
                 break;
             }
             eat(morsel);

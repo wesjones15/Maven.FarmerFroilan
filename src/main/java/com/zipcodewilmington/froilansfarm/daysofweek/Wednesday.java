@@ -7,12 +7,13 @@ import com.zipcodewilmington.froilansfarm.farm.ediblefoods.Tomato;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Farmer;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Pilot;
+import com.zipcodewilmington.froilansfarm.utils.Console;
 
 
 public class Wednesday extends Day {
 
     public static Farm run(Farm farm){
-        System.out.println("\n\n-------------------- WEDNESDAY --------------------\n");
+        Console.println("\n\n-------------------- WEDNESDAY --------------------\n");
         farm = morningActivities(farm);
         farm = lunchMeals(farm);
         farm = fertilize(farm);
@@ -25,7 +26,7 @@ public class Wednesday extends Day {
     }
 
     private static void printMondayNarrative() {
-        System.out.println(
+        Console.println(
                 "Things are normal on the farm.\n" +
                         "The chickens roost, the horses neigh, and Napoleon is enjoying the company of the other animals.\n" +
                         "The animals are happy it's hump day - they start making their plans for the weekend");
