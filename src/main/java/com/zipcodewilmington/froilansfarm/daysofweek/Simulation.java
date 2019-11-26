@@ -11,6 +11,7 @@ import com.zipcodewilmington.froilansfarm.farm.ediblefoods.Tomato;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Farmer;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Pilot;
+import com.zipcodewilmington.froilansfarm.utils.Console;
 import com.zipcodewilmington.froilansfarm.warehouses.Container;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Silo;
@@ -43,8 +44,13 @@ public class Simulation {
     public void run() {
         init();
         farm = Sunday.run(farm);
+        Console.promptEnterKey();
         farm = Monday.run(farm);
+        Console.promptEnterKey();
         farm = Tuesday.run(farm);
+        Console.promptEnterKey();
+        farm = Wednesday.run(farm);
+        Console.promptEnterKey();
         farm = Saturday.run(farm);
     }
 

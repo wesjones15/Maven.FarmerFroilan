@@ -12,7 +12,7 @@ public class Tuesday extends Day {
         farm = harvest(farm);
         printDaySummary(farm);
         printTuesdayNarrative();
-        promptEnterKey();
+//        promptEnterKey();
         return farm;
     }
 
@@ -31,7 +31,7 @@ public class Tuesday extends Day {
         Console.println(
                 "All is well on the farm.\n" +
                 "The chickens roost, the horses neigh, and your puppy keeps getting wetter.");
-        promptEnterKey();
+        Console.promptEnterKey();
         Console.println("\n\n-------------------- TUESDAY NIGHT --------------------\n" +
                 "Froilan wakes up in the middle of the night and sees lights in the barn.\n" +
                 "All of the animals seem to be congregating in the barn, and Napoleon is in the center making noises.\n" +

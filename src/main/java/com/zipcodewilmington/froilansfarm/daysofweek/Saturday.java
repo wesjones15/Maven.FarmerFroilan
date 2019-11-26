@@ -38,7 +38,7 @@ public class Saturday extends Day{
     public static Farm napoleonEmerges(Farm farm){
         Console.println("\nAs Froilan and Froilanda finish their breakfast, they hear a noise from outside.\n" +
                 "It sounds like chanting..........\n");
-        promptEnterKey();
+        Console.promptEnterKey();
         Pig napoleon = farm.getYard().getPig();
         callAndRepeat(napoleon, 5);
         burnItDown(napoleon, farm);
@@ -50,7 +50,7 @@ public class Saturday extends Day{
             Console.println("\n[Napoleon]: \"" + napoleon.makeNoise() + "\"");
             Console.println("[Animals]: \"Four legs good, two legs bad.\"");
         }
-        promptEnterKey();
+        Console.promptEnterKey();
     }
 
     public static Farm burnItDown(Pig napoleon, Farm farm){
@@ -87,8 +87,8 @@ public class Saturday extends Day{
                 "'-'-'-" + ANSI_RED + " ' (( (\" )" + ANSI_RESET + "[=]/'-'-'-/'.=:=:" + ANSI_RED + "." + ANSI_RESET + ":=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=\n" +
                 "-'-'-'" + ANSI_RED + ",._'_.,)_(." + ANSI_RESET + "'-'-'-'-/   '.   " + ANSI_RED + ")" + ANSI_RESET + "                                  |\n" +
                 "'-'-'-'-'-'-'-'-'-'-'-'-/    .-'" + ANSI_RED + "((" + ANSI_RESET + "          .--.--.                |/|\n" +
-                "-'-'-'-'-'-'-'-'-'-'-'-/ _.-'.-:" + ANSI_RED + "' )" + ANSI_RESET + "       .; .;|;. ;.            |/|/ \n" +
-                "       ___       ___   |' _.'\\ :|--|--|- .;_;'   ';_;. --|--|--|/|/   \n" +
+                "-'ALL ANIMALS ARE'-'-'-/ _.-'.-:" + ANSI_RED + "' )" + ANSI_RESET + "       .; .;|;. ;.            |/|/ \n" +
+                "   CREATED EQUAL ___   |' _.'\\ :|--|--|- .;_;'   ';_;. --|--|--|/|/   \n" +
                 "|]   [|_|_|]   [|_|_|] | |\\ | \\:|--|--| ; ;'       '; ; -|--|--|/     \n" +
                 "|]   [|_|_|]   [|_|_|] | | \\|--'       ;; .--.___.--. ;;     " + ANSI_RED + ")" + ANSI_RESET + "       \n" +
                 "_______________________| |.-'          ;-[(_) )=( (_)]-;   " + ANSI_RED + "(" + ANSI_RESET + "\n" +
