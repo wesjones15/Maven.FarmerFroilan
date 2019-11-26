@@ -17,8 +17,9 @@ public class Farm {
     private FarmHouse farmHouse;
     private ArrayList<ChickenCoop> chickenCoops;
     private ArrayList<Stable> stables;
+    private Yard yard;
 
-    public Farm(Tractor tractor, CropDuster cropDuster, Field field, Silo silo, FarmHouse farmHouse, ArrayList<ChickenCoop> chickenCoops, ArrayList<Stable> stables){
+    public Farm(Tractor tractor, CropDuster cropDuster, Field field, Silo silo, FarmHouse farmHouse, ArrayList<ChickenCoop> chickenCoops, ArrayList<Stable> stables, Yard yard){
         this.tractor = tractor;
         this.cropDuster = cropDuster;
         this.field = field;
@@ -26,10 +27,11 @@ public class Farm {
         this.farmHouse = farmHouse;
         this.chickenCoops = chickenCoops;
         this.stables = stables;
+        this.yard = yard;
     }
 
     public Farm() {
-        this(new Tractor(), new CropDuster(), new Field(), new Silo(), new FarmHouse(), new ArrayList<ChickenCoop>(), new ArrayList<Stable>());
+        this(new Tractor(), new CropDuster(), new Field(), new Silo(), new FarmHouse(), new ArrayList<ChickenCoop>(), new ArrayList<Stable>(), new Yard());
     }
 
     public Tractor getTractor() {
@@ -71,6 +73,12 @@ public class Farm {
     public void setFarmHouse(FarmHouse farmHouse) {
         this.farmHouse = farmHouse;
     }
+
+    public Yard getYard(){
+        return yard;
+    }
+
+    public void setYard(Yard yard){ this.yard = yard;}
 
     public ArrayList<ChickenCoop> getChickenCoops() {
         return chickenCoops;

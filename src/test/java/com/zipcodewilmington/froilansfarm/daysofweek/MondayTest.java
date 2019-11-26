@@ -24,7 +24,6 @@ public class MondayTest {
 
     @Test
     public void testFertilize() {
-        farm = Sunday.run(farm);
         farm = Monday.fertilize(farm);
         Field field = farm.getField();
         for (CropRow cropRow : field.get()) {

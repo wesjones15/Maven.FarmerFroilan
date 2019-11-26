@@ -10,8 +10,6 @@ import java.util.ArrayList;
 
 public class Silo extends Container<Edible> {
 
-    //
-
     public Silo() {
         this.contents = new ArrayList<Edible>();
     }

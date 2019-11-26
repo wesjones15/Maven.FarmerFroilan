@@ -3,6 +3,7 @@ package com.zipcodewilmington.froilansfarm.daysofweek;
 import com.zipcodewilmington.froilansfarm.animal.Animal;
 import com.zipcodewilmington.froilansfarm.animal.animalkinds.Chicken;
 import com.zipcodewilmington.froilansfarm.animal.animalkinds.Horse;
+import com.zipcodewilmington.froilansfarm.animal.animalkinds.Pig;
 import com.zipcodewilmington.froilansfarm.farm.Farm;
 import com.zipcodewilmington.froilansfarm.farm.ediblefoods.EarOfCorn;
 import com.zipcodewilmington.froilansfarm.farm.ediblefoods.EdibleEgg;
@@ -21,16 +22,19 @@ public class Simulation {
     Farm farm;
     Farmer farmer;
     Pilot pilot;
+    Pig napoleon;
 
     public Simulation() {
         farm = new Farm();
         farmer = new Farmer("Froilan");
         pilot = new Pilot("Froilanda");
+        napoleon = new Pig("Napoleon");
     }
 
     public void init() {
         farm.getFarmHouse().add(farmer);
         farm.getFarmHouse().add(pilot);
+        farm.getYard().add(napoleon);
         farm.setSilo(preFillSilo());
         farm.setStables(populateHorses(farm));
         farm.setChickenCoops(populateChickens(farm));
@@ -41,6 +45,8 @@ public class Simulation {
         farm = Sunday.run(farm);
         farm = Monday.run(farm);
         farm = Tuesday.run(farm);
+        farm = Wednesday.run(farm);
+        farm = Saturday.run(farm);
     }
 
     public ArrayList<Stable> populateHorses(Farm farm) {

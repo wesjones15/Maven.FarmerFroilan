@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm.peoplekinds;
 
 import com.zipcodewilmington.froilansfarm.animal.animalkinds.Horse;
+import com.zipcodewilmington.froilansfarm.farm.Farm;
 import com.zipcodewilmington.froilansfarm.farm.ediblefoods.EarOfCorn;
 import com.zipcodewilmington.froilansfarm.farm.field.Crop;
 import com.zipcodewilmington.froilansfarm.interfaces.Botanist;
@@ -26,12 +27,16 @@ public class Farmer extends Person implements Botanist {
         this.name = name;
     }
 
+
+
     public CropRow plant(Crop crop, CropRow cropRow) {
         cropRow.add(crop);
         return cropRow;
     }
 
-    public void ride(Horse horse, Stable stable) {
+
+    public void ride(Farm farm, Horse horse, Stable stable) {
+
         //10 horses across 3 stables  flag for ridden to = true?  or a count?
 
     }
@@ -39,6 +44,7 @@ public class Farmer extends Person implements Botanist {
     public void feed(Horse horse, EarOfCorn corn){
         //each  horse gets 3 earsOfCorn
         //their stomach contents will increase by 3 and the silo/storge of EarOfCorn will decrement by 3
+        //Stable contents ArrayList of <Horse>
     }
 
 //    public void eat(Edible food, Integer quantity) {
@@ -48,9 +54,17 @@ public class Farmer extends Person implements Botanist {
 
 //    }
 
+
+    //cropRow index 0 is Corn, cropRow index 1 is Tomato, and cropRow index 3+ some sort of arbitrary crop
+    public void plant (Farm farm) {
+
+
+    }
+
 //    public void eat(Edible food) {
 //        this.stomachContents.add(food);
 //    }
+
 
 
 

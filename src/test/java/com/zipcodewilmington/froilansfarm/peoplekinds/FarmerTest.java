@@ -35,4 +35,9 @@ public class FarmerTest {
         Assert.assertEquals(expected,actual);
     }
 
+
+    @Test
+    public void plant() {
+
+    }
 }
