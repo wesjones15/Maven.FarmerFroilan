@@ -30,7 +30,8 @@ public class Tuesday extends Day {
     private static void printTuesdayNarrative() {
         Console.println(
                 "All is well on the farm.\n" +
-                "The chickens roost, the horses neigh, and your puppy keeps getting wetter.");
+                "The chickens roost, the horses neigh, and your puppy keeps getting wetter.\n" +
+                        "Napoleon and Old Major sure seem to be spending a lot of time together.");
         Console.promptEnterKey();
         Console.println("\n\n-------------------- TUESDAY NIGHT --------------------\n" +
                 "Froilan wakes up in the middle of the night and sees lights in the barn.\n" +

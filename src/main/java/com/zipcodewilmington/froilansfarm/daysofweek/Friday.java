@@ -41,26 +41,26 @@ public class Friday extends Day{
     }
 
     public static Farm napoleonRising(Farm farm){
-        Console.println("As Froilanda is walking past the barn, she sees Napoleon on wooden box squealing.\n");
+        Console.println("As Froilanda is walking past the barn, she sees Napoleon on a wooden box squealing.\n");
         Console.promptEnterKey();
         Pig napoleon = farm.getYard().getPig();
         napoleonStare(napoleon, farm);
         napoleonThreaten(napoleon, 2);
-        Console.promptEnterKey();
+//        Console.promptEnterKey();
         return farm;
     }
 
     public static void napoleonStare(Pig napoleon, Farm farm){
         Console.println("The animals turn to Froilanda and disperse as Napoleon stares at her.");
         Console.promptEnterKey();
-        Console.println("As Froilanda as she begins to walk away, Napoleon mumbles quietly.");
-        Console.promptEnterKey();
+        Console.println("As Froilanda begins to walk away, Napoleon mumbles quietly.");
+//        Console.promptEnterKey();
     }
 
     public static void napoleonThreaten(Pig napoleon, int num) {
         for (int i = 0; i < num; i++) {
             Console.println("\n[Napoleon]: \"" + napoleon.makeNoise() + "\"");
         }
-        Console.promptEnterKey();
+//        Console.promptEnterKey();
     }
 }

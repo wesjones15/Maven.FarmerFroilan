@@ -19,10 +19,10 @@ public class Thursday extends Day {
 
     private static void printThursdayNarrative() {
         Console.println(
-                "All is well on the farm.\n" +
-                        "The chickens roost, the horses neigh, and your puppy keeps getting wetter.\n" +
-                        "Old Major, the farm's aged prize Middle White boar, succumbs to old age.\n" +
-                        "There is a growing unease on the farm.");
+                "There is a growing unease on the farm.\n" +
+                        "Some things remain the same. The chickens roost, the horses neigh, and your puppy keeps getting wetter.\n" +
+                        "However, a sad turn of events, Old Major succumbs to old age.\n" +
+                        "This upsets many of the animals, and the farm is noisier than usual as their cries replace the usual calm of farm life.");
     }
 
 }

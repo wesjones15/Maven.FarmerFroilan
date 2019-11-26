@@ -25,8 +25,9 @@ public class Sunday extends Day {
     public static void printSundayNarrative(){
         Console.println(
                 "All is well on the farm.\n" +
+                "You have just returned from the regional fair where Old Major, your aged Middle White boar, was awarded what is likely his last victory.\n" +
                 "Your chickens and horses are content.\n" +
-                "Your prize pig, Napoleon, is happy.\n" +
+                "Your upcoming prize pig, Napoleon, is happy.\n" +
                 "Your puppy is wet.");
     }
 

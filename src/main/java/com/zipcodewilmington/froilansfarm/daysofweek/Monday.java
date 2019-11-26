@@ -30,7 +30,9 @@ public class Monday extends Day {
     private static void printMondayNarrative() {
         Console.println(
                 "All is well on the farm.\n" +
-                "The chickens roost, the horses neigh, and Napoleon is enjoying the company of the other animals.");
+                "The chickens roost, the horses neigh, and Napoleon is enjoying the company of the other animals.\n" +
+                        "Old Major seems to be the center of attention among your animals.\n" +
+                        "It's almost like they know what a fine boar he is and are trying to learn from his wisdom.\n");
     }
 
 }

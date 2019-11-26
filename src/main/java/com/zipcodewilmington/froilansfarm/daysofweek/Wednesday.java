@@ -28,9 +28,11 @@ public class Wednesday extends Day {
     private static void printMondayNarrative() {
         Console.println(
                 "Things are normal on the farm.\n" +
-                        "The chickens roost, the horses neigh, and Napoleon is enjoying the company of the other animals.\n" +
+                        "The chickens roost, the horses neigh, and Napoleon and Old Major are enjoying the company of the other animals.\n" +
                         "The animals are happy it's hump day - they start making their plans for the weekend\n\n\n" +
-                        "There is faint singing in the background........\n\n" +
+                        "There is faint singing in the background........\n\n");
+                Console.promptEnterKey();
+                Console.println(
                         "Beasts of England, beasts of Ireland\n" +
                         "Beasts of every land and clime\n" +
                         "Hearken to my joyful tidings\n" +
