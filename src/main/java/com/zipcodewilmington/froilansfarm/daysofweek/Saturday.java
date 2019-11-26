@@ -19,7 +19,8 @@ public class Saturday extends Day{
 
 
     public static Farm run(Farm farm) {
-        farm = morning(farm);
+        System.out.println("\n\n-------------------- SATURDAY --------------------\n");
+        farm = morningActivities(farm);
         farm = fertilize(farm);
         napoleonEmerges(farm);
         return farm;
@@ -34,6 +35,9 @@ public class Saturday extends Day{
     }
 
     public static Farm napoleonEmerges(Farm farm){
+        System.out.println("\nAs Froilan and Froilanda finish their breakfast, they hear a noise from outside.\n" +
+                "It sounds like chanting..........\n");
+        promptEnterKey();
         Pig napoleon = farm.getYard().getPig();
         callAndRepeat(napoleon, 5);
         burnItDown(napoleon, farm);
@@ -52,15 +56,15 @@ public class Saturday extends Day{
         // set everything to zero
         // can I kill anyone???
         farm.setSilo(null);
-        System.out.println("\nThe silo is on fire........");
+        System.out.println(ANSI_RED + "\nThe silo is on fire........" + ANSI_RESET);
         callAndRepeat(napoleon, 1);
         farm.setFarmHouse(null);
-        System.out.println("\nThe farmhouse is on fire........");
+        System.out.println(ANSI_RED + "\nThe farmhouse is on fire........" + ANSI_RESET);
         callAndRepeat(napoleon, 1);
         farm.setField(null);
-        System.out.println("\nThe crops are on fire........");
+        System.out.println(ANSI_RED + "\nThe crops are on fire........" + ANSI_RESET);
         callAndRepeat(napoleon, 1);
-        System.out.println("\nThe farmers are both missing.........");
+        System.out.println(ANSI_RED + "\nThe farmers are both missing........." + ANSI_RESET);
         callAndRepeat(napoleon, 1);
         System.out.println(asciiBurnArt());
         return farm;
