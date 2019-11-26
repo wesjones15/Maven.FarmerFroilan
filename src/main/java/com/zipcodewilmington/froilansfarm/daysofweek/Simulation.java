@@ -46,6 +46,7 @@ public class Simulation {
         farm = Monday.run(farm);
         farm = Tuesday.run(farm);
         farm = Wednesday.run(farm);
+        farm = Thursday.run(farm);
         farm = Saturday.run(farm);
     }
 
