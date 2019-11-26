@@ -64,7 +64,10 @@ public class TractorTest {
         tractor.operate(farm);
 
         Silo silo = farm.getSilo();
-        Assert.assertEquals(6, silo.get().size());
+
+        Integer actual = silo.size();
+        Integer expected = 6;
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
