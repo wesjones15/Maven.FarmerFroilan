@@ -18,7 +18,7 @@ public class Sunday extends Day {
         printDaySummary(farm);
         Console.println("");
         printSundayNarrative();
-        promptEnterKey();
+//        promptEnterKey();
         return farm;
     }
 

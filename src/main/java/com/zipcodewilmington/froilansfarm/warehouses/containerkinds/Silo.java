@@ -7,11 +7,22 @@ import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.warehouses.Container;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public class Silo extends Container<Edible> {
+public class Silo {
+    private HashMap<String, Integer> inv;
+    private final String[] types = {"EarOfCorn", "Tomato", "EdibleEgg"};
 
     public Silo() {
-        this.contents = new ArrayList<Edible>();
+        this.inv = initMap();
+    }
+
+    public HashMap<String, Integer> initMap() {
+        HashMap<String, Integer> inv = new HashMap<String, Integer>();
+        for (String food : types) {
+            inv.put(food, 0);
+        }
+        return inv;
     }
 
     public void addAll(ArrayList<Edible> foods) {
@@ -20,14 +31,30 @@ public class Silo extends Container<Edible> {
         }
     }
 
+    public void add(Edible food) {
+        Integer count = inv.get(food.getClass().getSimpleName()) + 1;
+        inv.put(food.getClass().getSimpleName(), count);
+    }
+
+    public void remove(Edible food) {
+        Integer count = inv.get(food.getClass().getSimpleName()) - 1;
+        inv.put(food.getClass().getSimpleName(), count);
+    }
+
+    public void removeAll() {
+        this.inv = initMap();
+    }
+
     public Integer getAmountOf(Edible food) {
-        Integer count = 0;
-        for (Edible f : this.contents) {
-            if (f.getClass() == food.getClass()) {
-                count++;
-            }
+        return inv.get(food.getClass().getSimpleName());
+    }
+
+    public Integer size() {
+        Integer size = 0;
+        for (String food : types) {
+            size += inv.get(food);
         }
-        return count;
+        return size;
     }
 
     public Edible getFood(Edible food) {
@@ -40,12 +67,12 @@ public class Silo extends Container<Edible> {
 
     @Override
     public String toString() {
-        Edible[] types = {new EarOfCorn(), new Tomato(), new EdibleEgg()};
         StringBuilder out = new StringBuilder().append("Silo Inventory");
-        for (Edible food: types) {
-            Integer amount = this.getAmountOf(food);
-            out.append(String.format("\n\t%s x %s", food.getClass().getSimpleName(), amount));
+        for (String foodName : types) {
+            out.append(String.format("\n\t%s x %s", foodName, inv.get(foodName)));
         }
         return out.toString();
+
+
     }
 }

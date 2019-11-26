@@ -11,6 +11,7 @@ import com.zipcodewilmington.froilansfarm.farm.ediblefoods.Tomato;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Farmer;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Pilot;
+import com.zipcodewilmington.froilansfarm.utils.Console;
 import com.zipcodewilmington.froilansfarm.warehouses.Container;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Silo;
@@ -35,7 +36,7 @@ public class Simulation {
         farm.getFarmHouse().add(farmer);
         farm.getFarmHouse().add(pilot);
         farm.getYard().add(napoleon);
-        farm.setSilo(preFillSilo());
+        farm.setSilo(preFillSilo(100));
         farm.setStables(populateHorses(farm));
         farm.setChickenCoops(populateChickens(farm));
     }
@@ -43,10 +44,15 @@ public class Simulation {
     public void run() {
         init();
         farm = Sunday.run(farm);
+        Console.promptEnterKey();
         farm = Monday.run(farm);
+        Console.promptEnterKey();
         farm = Tuesday.run(farm);
+        Console.promptEnterKey();
         farm = Wednesday.run(farm);
+        Console.promptEnterKey();
         farm = Thursday.run(farm);
+        Console.promptEnterKey();
         farm = Saturday.run(farm);
     }
 
@@ -78,9 +84,9 @@ public class Simulation {
         return coops;
     }
 
-    public Silo preFillSilo() {
+    public Silo preFillSilo(Integer amount) {
         Silo silo = new Silo();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < amount; i++) {
             silo.add(new EarOfCorn());
             silo.add(new Tomato());
             silo.add(new EdibleEgg());

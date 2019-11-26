@@ -3,6 +3,7 @@ package com.zipcodewilmington.froilansfarm.warehouses.containerkinds;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Farmer;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Person;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Pilot;
+import com.zipcodewilmington.froilansfarm.utils.Console;
 import com.zipcodewilmington.froilansfarm.warehouses.Container;
 
 import java.util.ArrayList;
@@ -25,9 +26,9 @@ public class FarmHouse extends Container<Person> {
     }
 
     public void setFarmer(Farmer farmer) {
-        for (Person person : contents) {
-            if (person instanceof Farmer) {
-                person = farmer;
+        for (int i = 0; i < contents.size(); i++) {
+            if (contents.get(i) instanceof Farmer) {
+                contents.set(i, farmer);
                 break;
             }
         }
@@ -38,16 +39,15 @@ public class FarmHouse extends Container<Person> {
         for (Person person : contents) {
             if (person instanceof Pilot) {
                 pilot = (Pilot) person;
-                break;
             }
         }
         return pilot;
     }
 
     public void setPilot(Pilot pilot) {
-        for (Person person : contents) {
-            if (person instanceof Pilot) {
-                person = pilot;
+        for (int i = 0; i < contents.size(); i++) {
+            if (contents.get(i) instanceof Pilot) {
+                contents.set(i, pilot);
                 break;
             }
         }

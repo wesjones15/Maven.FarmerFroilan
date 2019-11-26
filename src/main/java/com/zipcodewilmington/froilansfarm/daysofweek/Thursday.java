@@ -14,7 +14,6 @@ public class Thursday extends Day {
         farm = feedHorses(farm);
         printDaySummary(farm);
         printThursdayNarrative();
-        promptEnterKey();
         return farm;
     }
 
