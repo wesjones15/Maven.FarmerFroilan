@@ -12,7 +12,7 @@ import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Stable;
 import java.util.ArrayList;
 
 public class Farmer extends Person implements Botanist {
-    private ArrayList<Edible> stomachContents;
+//    private ArrayList<Edible> stomachContents;
     private String name;
 
     public Farmer(String name){
@@ -76,8 +76,8 @@ public class Farmer extends Person implements Botanist {
     @Override
     public String toString() {
         return "Farmer{" +
-                "stomachContents=" + stomachContents +
-                ", name='" + name + '\'' +
+                "stomachContents=" + this.getStomachContents() +
+                ", name='" + this.getName() + '\'' +
                 '}';
     }
 

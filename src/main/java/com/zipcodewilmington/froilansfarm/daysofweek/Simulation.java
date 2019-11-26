@@ -36,7 +36,7 @@ public class Simulation {
         farm.getFarmHouse().add(farmer);
         farm.getFarmHouse().add(pilot);
         farm.getYard().add(napoleon);
-        farm.setSilo(preFillSilo());
+        farm.setSilo(preFillSilo(100));
         farm.setStables(populateHorses(farm));
         farm.setChickenCoops(populateChickens(farm));
     }
@@ -82,9 +82,9 @@ public class Simulation {
         return coops;
     }
 
-    public Silo preFillSilo() {
+    public Silo preFillSilo(Integer amount) {
         Silo silo = new Silo();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < amount; i++) {
             silo.add(new EarOfCorn());
             silo.add(new Tomato());
             silo.add(new EdibleEgg());

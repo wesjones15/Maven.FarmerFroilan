@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Day {
-    private Edible [] food;
+//    private Edible [] food;
     public static final Edible[] froilanBreakfast = {new EarOfCorn(), new Tomato(), new Tomato(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg()};
     public static final Edible[] froilandaBreakfast = {new EarOfCorn(), new EarOfCorn(), new Tomato(), new EdibleEgg(), new EdibleEgg()};
 

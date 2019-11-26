@@ -9,19 +9,19 @@ import com.zipcodewilmington.froilansfarm.warehouses.Container;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Silo extends Container<Edible> {
+public class Silo {
     private HashMap<String, Integer> inv;
+    private final String[] types = {"EarOfCorn", "Tomato", "EdibleEgg"};
 
     public Silo() {
-        this.contents = new ArrayList<Edible>();
         this.inv = initMap();
     }
 
     public HashMap<String, Integer> initMap() {
         HashMap<String, Integer> inv = new HashMap<String, Integer>();
-        inv.put("EarOfCorn", 0);
-        inv.put("Tomato", 0);
-        inv.put("EdibleEgg", 0);
+        for (String food : types) {
+            inv.put(food, 0);
+        }
         return inv;
     }
 
@@ -31,41 +31,28 @@ public class Silo extends Container<Edible> {
         }
     }
 
-    @Override
     public void add(Edible food) {
         Integer count = inv.get(food.getClass().getSimpleName()) + 1;
         inv.put(food.getClass().getSimpleName(), count);
     }
 
-    @Override
     public void remove(Edible food) {
         Integer count = inv.get(food.getClass().getSimpleName()) - 1;
         inv.put(food.getClass().getSimpleName(), count);
     }
 
-    @Override
     public void removeAll() {
         this.inv = initMap();
     }
 
     public Integer getAmountOf(Edible food) {
-//        Integer count = 0;
-//        for (Edible f : this.contents) {
-//            if (f.getClass() == food.getClass()) {
-//                count++;
-//            }
-//        }
-//
-//        return count;
         return inv.get(food.getClass().getSimpleName());
     }
 
     public Integer size() {
-        String[] types = {"EarOfCorn", "Tomato", "EdibleEgg"};
         Integer size = 0;
         for (String food : types) {
             size += inv.get(food);
-
         }
         return size;
     }
@@ -75,21 +62,14 @@ public class Silo extends Container<Edible> {
             this.remove(food);
             return food;
         }
-        else
-            return null;
+        return null;
     }
 
     @Override
     public String toString() {
-//        Edible[] types = {new EarOfCorn(), new Tomato(), new EdibleEgg()};
-        String[] types = {"EarOfCorn", "Tomato", "EdibleEgg"};
         StringBuilder out = new StringBuilder().append("Silo Inventory");
-//        for (Edible food: types) {
         for (String foodName : types) {
-//            Integer amount = this.getAmountOf(food);
-//            Integer amount = inv.get(food.getClass().getSimpleName());
-            Integer amount = inv.get(foodName);
-            out.append(String.format("\n\t%s x %s", foodName, amount));
+            out.append(String.format("\n\t%s x %s", foodName, inv.get(foodName)));
         }
         return out.toString();
 

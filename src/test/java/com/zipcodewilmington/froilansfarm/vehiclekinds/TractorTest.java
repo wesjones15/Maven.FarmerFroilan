@@ -86,7 +86,7 @@ public class TractorTest {
 
         Silo silo = farm.getSilo();
         // should be zero because crops are unfertilized
-        Assert.assertEquals(0, silo.get().size());
+        Assert.assertEquals((Integer) 0, silo.size());
     }
 
 }
