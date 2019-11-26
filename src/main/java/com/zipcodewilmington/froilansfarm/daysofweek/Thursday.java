@@ -21,7 +21,7 @@ public class Thursday extends Day {
         Console.println(
                 "There is a growing unease on the farm.\n" +
                         "Some things remain the same. The chickens roost, the horses neigh, and your puppy keeps getting wetter.\n" +
-                        "However, a sad turn of events, Old Major succumbs to old age.\n" +
+                        "However, a sad turn of events, Old Major has succumbed to old age.\n" +
                         "This upsets many of the animals, and the farm is noisier than usual as their cries replace the usual calm of farm life.");
     }
 
