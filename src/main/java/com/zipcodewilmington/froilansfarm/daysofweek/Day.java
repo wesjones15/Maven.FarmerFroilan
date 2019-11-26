@@ -119,7 +119,7 @@ public class Day {
         return farm;
     }
 
-    public static void promptEnterKey(){
+//    public static void promptEnterKey(){
         //Jack, this breaks the tests
 //        System.out.println("\nPress \"Enter\" to continue...");
 //        try {
@@ -127,7 +127,7 @@ public class Day {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-    }
+//    }
 
     public static void printDaySummary(Farm farm){
 //        System.out.println("Silo Contents:\n");
