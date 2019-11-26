@@ -43,6 +43,9 @@ public class Tractor extends FarmVehicle implements Vehicle {
         // for each croprow in field in farm
         Field field = farm.getField();
         Silo silo = farm.getSilo();
+
+
+
         for (CropRow cropRow : field.get()) { // farm.getField().getCropRows()) {
             silo.addAll(harvest(cropRow));
 
