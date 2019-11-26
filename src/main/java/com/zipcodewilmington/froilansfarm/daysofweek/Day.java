@@ -12,6 +12,7 @@ import com.zipcodewilmington.froilansfarm.farm.field.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Farmer;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Pilot;
+import com.zipcodewilmington.froilansfarm.utils.Console;
 import com.zipcodewilmington.froilansfarm.vehiclekinds.CropDuster;
 import com.zipcodewilmington.froilansfarm.vehiclekinds.Tractor;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.CropRow;
@@ -25,10 +26,25 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Day {
+
     private Field field;
     private Farm farm;
 
     private Edible [] food;
+
+
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
+
+    //    private Edible [] food;
+
     public static final Edible[] froilanBreakfast = {new EarOfCorn(), new Tomato(), new Tomato(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg()};
     public static final Edible[] froilandaBreakfast = {new EarOfCorn(), new EarOfCorn(), new Tomato(), new EdibleEgg(), new EdibleEgg()};
 
@@ -42,9 +58,9 @@ public class Day {
 
     public static Farm morningActivities(Farm farm) {
         farm = feedFarmer(farm, froilanBreakfast);
-        System.out.println("Froilan eats his breakfast of an ear of corn, two tomatoes, and five eggs.");
+        Console.println("%s eats his breakfast of an ear of corn, two tomatoes, and five eggs.", farm.getFarmHouse().getFarmer().getName());
         farm = feedPilot(farm, froilandaBreakfast);
-        System.out.println("Froilanda eats her breakfast of two ears of corn, a tomato, and two eggs.");
+        Console.println("%s eats her breakfast of two ears of corn, a tomato, and two eggs.", farm.getFarmHouse().getPilot().getName());
         farm = rideHorses(farm);
         farm = feedHorses(farm);
         return farm;
@@ -52,18 +68,18 @@ public class Day {
 
     public static Farm lunchMeals(Farm farm){
         farm = feedFarmer(farm, froilanLunch);
-        System.out.println("Froilan eats his lunch of an ear of corn, two tomatoes, and three eggs.");
+        Console.println("%s eats his lunch of an ear of corn, two tomatoes, and three eggs.", farm.getFarmHouse().getFarmer().getName());
         farm = feedPilot(farm, froilandaLunch);
-        System.out.println("Froilanda eats her lunch of an ear of corn, three tomatoes, and one egg.");
+        Console.println("%s eats her lunch of an ear of corn, three tomatoes, and one egg.", farm.getFarmHouse().getPilot().getName());
         farm = feedHorses(farm);
         return farm;
     }
 
     public static Farm dinnerMeals(Farm farm) {
         farm = feedFarmer(farm, froilanLDinner);
-        System.out.println("Froila eats his dinner of two ears of corn, a tomato, and two eggs.");
+        Console.println("%s eats his dinner of two ears of corn, a tomato, and two eggs.", farm.getFarmHouse().getFarmer().getName());
         farm = feedPilot(farm, froilandaDinner);
-        System.out.println("Froilanda eats her dinner of an ear of corn, three tomatoes, and one egg.");
+        Console.println("%s eats her dinner of an ear of corn, three tomatoes, and one egg.", farm.getFarmHouse().getPilot().getName());
         farm = feedHorses(farm);
         return farm;
     }
@@ -90,7 +106,7 @@ public class Day {
                 farmer.mount(horse);
                 horse.setHasBeenRidden(true);
                 farmer.dismount();
-                System.out.println("Yee haw, riding the horse");
+                Console.println("Yee haw, riding the horse");
             }
         }
         return farm;
@@ -119,9 +135,10 @@ public class Day {
             }
         }
         farm.setStables(stables);
-        System.out.println("Froilan feeds the horses three ears of corn each.");
+        Console.println("%s feeds the horses three ears of corn each.", farm.getFarmHouse().getFarmer().getName());
         return farm;
     }
+
 
 
     public static void promptEnterKey(){
@@ -136,7 +153,7 @@ public class Day {
 
     public static void printDaySummary(Farm farm){
 //        System.out.println("Silo Contents:\n");
-        System.out.println(farm.getSilo().toString());
+        Console.println(farm.getSilo().toString());
     }
 
     public static Farm fertilize(Farm farm) {
@@ -144,7 +161,7 @@ public class Day {
         CropDuster cropDuster = farm.getCropDuster();
         cropDuster.mount(pilot);
         farm = cropDuster.operate(farm);
-        System.out.println("Froilanda fertilizes all of the crops and crop dusts the entire farm in the process.  The pigs don't look thrilled.");
+        Console.println("%s fertilizes all of the crops and crop dusts the entire farm in the process.  The pigs don't look thrilled.", farm.getFarmHouse().getFarmer().getName());
         return farm;
     }
 
@@ -154,7 +171,7 @@ public class Day {
         Tractor tractor = farm.getTractor();
         tractor.mount(farmer);
         farm = tractor.operate(farm);
-        System.out.println("Froilan harvests the new crops.");
+        Console.println("%s harvests the new crops.", farm.getFarmHouse().getFarmer().getName());
         return farm;
     }
 
@@ -176,7 +193,7 @@ public class Day {
             field.add(cropRow);
         }
         farm.setField(field);
-        System.out.println("Froilan spends all day planting the fields.");
+        Console.println("%s spends all day planting the fields.", farm.getFarmHouse().getFarmer().getName());
         return farm;
     }
 

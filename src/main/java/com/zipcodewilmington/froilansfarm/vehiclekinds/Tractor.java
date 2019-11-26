@@ -7,6 +7,7 @@ import com.zipcodewilmington.froilansfarm.interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.interfaces.Vehicle;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Farmer;
 import com.zipcodewilmington.froilansfarm.peoplekinds.Person;
+import com.zipcodewilmington.froilansfarm.utils.Console;
 import com.zipcodewilmington.froilansfarm.vehiclekinds.FarmVehicle;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.CropRow;
 import com.zipcodewilmington.froilansfarm.warehouses.containerkinds.Field;
@@ -52,7 +53,7 @@ public class Tractor extends FarmVehicle implements Vehicle {
         farmer.dismount();
         this.dismount();
         farm.setSilo(silo);
-        System.out.println("Ridin' my tractor to get these crops harvested!");
+        Console.println("Ridin' my tractor to get these crops harvested!");
         return farm;
 
     }

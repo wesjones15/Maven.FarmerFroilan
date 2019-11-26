@@ -3,6 +3,7 @@ package com.zipcodewilmington.froilansfarm.animal.animalkinds;
 import com.zipcodewilmington.froilansfarm.animal.Animal;
 import com.zipcodewilmington.froilansfarm.farm.ediblefoods.EarOfCorn;
 import com.zipcodewilmington.froilansfarm.interfaces.*;
+import org.hamcrest.core.StringContains;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,11 +15,14 @@ public class HorseTest {
 
     Horse testHorse;
     Edible corn;
+    String defaultHorseNames;
 
     @Before
     public void setUp(){
         testHorse = new Horse();
         corn = new EarOfCorn();
+        defaultHorseNames = "Boxer Mollie Clover Benjamin";
+
     }
 
     @Test
@@ -73,7 +77,8 @@ public class HorseTest {
 
     @Test
     public void testGetName(){
-        Assert.assertEquals("[Gleu]", testHorse.getName());
+        Assert.assertThat(defaultHorseNames, StringContains.containsString(testHorse.getName()));
+        ;
     }
 
     @Test

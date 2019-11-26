@@ -3,10 +3,13 @@ package com.zipcodewilmington.froilansfarm.peoplekinds;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 
 public class Pilot extends Person {
-    String name;
+//    private String name;
 
+    public Pilot() {
+        this.setName("Flyin' Froilanda");
+    }
     public Pilot(String name) {
-        this.name = "Flyin' Froilanda";
+        this.setName(name);
     }
 
     public String makeNoise() {
