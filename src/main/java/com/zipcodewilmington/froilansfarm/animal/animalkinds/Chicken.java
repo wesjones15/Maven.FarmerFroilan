@@ -16,10 +16,12 @@ public class Chicken extends Animal implements Produce, Edible {
 
     public Chicken(String name) {
         super(name);
+        this.hasBeenFertilized = false;
     }
 
     public Chicken(){
         super.setName(chickenNames[((int)(Math.random() * ((3-0)+1)))]);
+        this.hasBeenFertilized = false;
     }
 
     public EdibleEgg yield() {
